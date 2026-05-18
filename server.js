@@ -14,7 +14,11 @@ const DAILY_COUNT = 8; // how many clues per daily puzzle
 const LAUNCH_KEY = '2026-05-18'; // pierwsze wydanie
 // Vercel (and any serverless target) ma read-only filesystem poza /tmp.
 // W tym trybie blokujemy zapisy i trzymamy cache w pamięci procesu.
-const READ_ONLY = process.env.READ_ONLY === '1' || !!process.env.VERCEL;
+const READ_ONLY =
+  process.env.READ_ONLY === '1' ||
+  !!process.env.VERCEL ||
+  !!process.env.AWS_LAMBDA_FUNCTION_NAME ||
+  !!process.env.NOW_REGION;
 
 const DATA_DIR = path.join(__dirname, 'data');
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
@@ -23,10 +27,12 @@ const PUZZLES_FILE = path.join(DATA_DIR, 'puzzles.json');
 const SCHEDULES_FILE = path.join(DATA_DIR, 'schedules.json');
 
 if (!READ_ONLY) {
-  fs.mkdirSync(UPLOAD_DIR, { recursive: true });
-  if (!fs.existsSync(CLUES_FILE)) fs.writeFileSync(CLUES_FILE, '[]');
-  if (!fs.existsSync(PUZZLES_FILE)) fs.writeFileSync(PUZZLES_FILE, '{}');
-  if (!fs.existsSync(SCHEDULES_FILE)) fs.writeFileSync(SCHEDULES_FILE, '{}');
+  // Defensywnie: nawet gdyby flaga była błędnie wyłączona na serverless,
+  // EROFS nigdy nie wywróci procesu.
+  try { fs.mkdirSync(UPLOAD_DIR, { recursive: true }); } catch {}
+  try { if (!fs.existsSync(CLUES_FILE)) fs.writeFileSync(CLUES_FILE, '[]'); } catch {}
+  try { if (!fs.existsSync(PUZZLES_FILE)) fs.writeFileSync(PUZZLES_FILE, '{}'); } catch {}
+  try { if (!fs.existsSync(SCHEDULES_FILE)) fs.writeFileSync(SCHEDULES_FILE, '{}'); } catch {}
 }
 
 // In-memory mirror used in read-only mode (Vercel).
