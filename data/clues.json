@@ -1,0 +1,130 @@
+[
+  {
+    "id": "s01",
+    "clue": "Stolica Polski",
+    "answer": "WARSZAWA",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s02",
+    "clue": "Najwyższy szczyt świata",
+    "answer": "EVEREST",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s03",
+    "clue": "Czerwona planeta",
+    "answer": "MARS",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s04",
+    "clue": "Autor 'Pana Tadeusza'",
+    "answer": "MICKIEWICZ",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s05",
+    "clue": "Największy ocean",
+    "answer": "SPOKOJNY",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s06",
+    "clue": "Pierwiastek o symbolu Au",
+    "answer": "ZLOTO",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s07",
+    "clue": "Stolica Francji",
+    "answer": "PARYZ",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s08",
+    "clue": "Owoc, który spadł na Newtona",
+    "answer": "JABLKO",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s09",
+    "clue": "Najdłuższa rzeka świata",
+    "answer": "NIL",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s10",
+    "clue": "Język programowania nazwany od węża",
+    "answer": "PYTHON",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s11",
+    "clue": "Reżyser 'Pulp Fiction'",
+    "answer": "TARANTINO",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s12",
+    "clue": "Kontynent z Egiptem",
+    "answer": "AFRYKA",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s13",
+    "clue": "Stolica Japonii",
+    "answer": "TOKIO",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s14",
+    "clue": "Twórca teorii względności",
+    "answer": "EINSTEIN",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "s15",
+    "clue": "Polski malarz batalista, autor 'Bitwy pod Grunwaldem'",
+    "answer": "MATEJKO",
+    "type": "text",
+    "media": null,
+    "createdAt": 0
+  },
+  {
+    "id": "f21368d7d4ad",
+    "clue": "Podaj nazwisko złodzieja widocznego na zdjęciu.",
+    "answer": "TUSK",
+    "type": "text",
+    "media": "/uploads/5c58a1a1eaceb7af.jpg",
+    "createdAt": 1779063350224
+  }
+]

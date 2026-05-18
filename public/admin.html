@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Redakcja · Codzienna Krzyżówka</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,800&family=JetBrains+Mono:wght@400;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="paper admin">
+    <header class="masthead">
+      <div class="mast-left">
+        <div class="issue">redakcja</div>
+        <div class="date">panel administratora</div>
+      </div>
+      <h1 class="title"><span>Codzienna</span><em>Krzyżówka</em></h1>
+      <div class="mast-right">
+        <a href="/" class="icon-btn ghost"><span>← do gry</span></a>
+      </div>
+    </header>
+
+    <hr class="rule double" />
+
+    <main class="admin-layout">
+      <section class="panel" id="loginPanel">
+        <h2>Wejście do redakcji</h2>
+        <p class="muted">Wprowadź hasło administratora aby dodawać hasła.</p>
+        <form id="loginForm" class="form-row">
+          <input type="password" id="password" placeholder="hasło" autocomplete="current-password" />
+          <button class="primary" type="submit">Wejdź</button>
+        </form>
+        <p id="loginError" class="error" hidden></p>
+      </section>
+
+      <section class="panel" id="composerPanel" hidden>
+        <h2>Dodaj hasło</h2>
+        <form id="clueForm" class="composer">
+          <div class="field">
+            <label>Hasło (odpowiedź)</label>
+            <input type="text" id="answer" placeholder="np. WARSZAWA" maxlength="24" required />
+            <small class="muted">Polskie znaki zostaną zapisane; w siatce użyjemy uproszczonych liter.</small>
+          </div>
+
+          <div class="field">
+            <label>Typ</label>
+            <div class="type-toggle">
+              <label><input type="radio" name="type" value="text" checked /><span>Tekstowe</span></label>
+              <label><input type="radio" name="type" value="image" /><span>Wizualne</span></label>
+              <label><input type="radio" name="type" value="audio" /><span>Dźwiękowe</span></label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Pytanie / opis</label>
+            <textarea id="clue" rows="2" placeholder="np. Stolica Polski" required></textarea>
+          </div>
+
+          <div class="field" id="mediaField" hidden>
+            <label id="mediaLabel">Plik</label>
+            <div class="upload">
+              <input type="file" id="mediaFile" />
+              <input type="text" id="mediaUrl" placeholder="…lub wklej URL" />
+            </div>
+            <small class="muted" id="mediaHint">Dla wizualnych: obraz (jpg/png/svg). Dla dźwiękowych: mp3/ogg/wav.</small>
+            <div id="mediaPreview" class="media-preview" hidden></div>
+          </div>
+
+          <div class="actions">
+            <button class="primary" type="submit">Dodaj do banku</button>
+            <button class="ghost" type="button" id="clearForm">Wyczyść</button>
+          </div>
+          <p id="formError" class="error" hidden></p>
+          <p id="formOk" class="ok" hidden></p>
+        </form>
+      </section>
+
+      <section class="panel" id="bankPanel" hidden>
+        <div class="bank-head">
+          <h2>Bank haseł <span id="bankCount" class="muted"></span></h2>
+          <div class="filters">
+            <input id="bankSearch" type="search" placeholder="Szukaj…" />
+            <select id="bankType">
+              <option value="">wszystkie</option>
+              <option value="text">tekstowe</option>
+              <option value="image">wizualne</option>
+              <option value="audio">dźwiękowe</option>
+            </select>
+          </div>
+        </div>
+        <ul id="bankList" class="bank-list"></ul>
+        <p class="muted">Po każdej zmianie banku jutrzejsza krzyżówka zostanie wylosowana ponownie. Dzisiejsza i przeszłe pozostają nietknięte.</p>
+      </section>
+    </main>
+
+    <footer class="colophon">
+      <span>panel redakcyjny</span>
+    </footer>
+  </div>
+
+  <script src="/admin.js"></script>
+</body>
+</html>
