@@ -120,11 +120,67 @@
     "createdAt": 0
   },
   {
-    "id": "68aa28e3caa0",
-    "clue": "Podaj nazwisko tego zbrodniarza",
-    "answer": "TUSK",
+    "id": "710520dcd210",
+    "clue": "Jakiego kraju jest to flaga?",
+    "answer": "MALAWI",
     "type": "image",
-    "media": "/uploads/eb6354cff262553e.jpg",
-    "createdAt": 1779064004066
+    "media": "/uploads/b53997fdb70749fa.png",
+    "createdAt": 1779134130259
+  },
+  {
+    "id": "78e2f75bdb5c",
+    "clue": "Nazwisko piłkarza który strzelił drugiego gola w meczu Polska-Niemcy 2:0",
+    "answer": "MILA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779134158010
+  },
+  {
+    "id": "b924fbd9664c",
+    "clue": "Najnowszy odkryty pierwiastek chemiczny.",
+    "answer": "OGANESON",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779134271488
+  },
+  {
+    "id": "dd6a3e065ece",
+    "clue": "Nazwisko reżysera \"Dnia świra\".",
+    "answer": "KOTERSKI",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779134353022
+  },
+  {
+    "id": "c61216532484",
+    "clue": "Kraj pochodzenia The Weeknda.",
+    "answer": "ETIOPIA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779134404556
+  },
+  {
+    "id": "22f3d67cd505",
+    "clue": "Drugi największy kraj pod względem powierzchni.",
+    "answer": "KANADA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779134479490
+  },
+  {
+    "id": "6635f986e218",
+    "clue": "Najdłuższa ulica w Krakowie.",
+    "answer": "IGOŁOMSKA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779134557485
+  },
+  {
+    "id": "be32c25962eb",
+    "clue": "Artysta z największą liczbą słuchaczy na Spotify (stan na 19.05.2026)",
+    "answer": "BRUNOMARS",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779134740877
   }
 ]

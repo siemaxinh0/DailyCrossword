@@ -126,6 +126,35 @@
     </footer>
   </div>
 
+  <div id="previewModal" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card preview-card" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+      <header class="preview-head">
+        <div>
+          <div class="preview-kicker">podgląd wydania</div>
+          <h3 id="previewTitle" class="preview-title">—</h3>
+        </div>
+        <button class="icon-btn ghost" type="button" data-close aria-label="Zamknij">✕</button>
+      </header>
+      <div class="preview-body">
+        <div class="preview-grid-wrap">
+          <div id="previewGrid" class="grid preview-grid"></div>
+          <p id="previewUnplaced" class="muted" hidden></p>
+        </div>
+        <div class="preview-clues">
+          <section>
+            <h4>Poziomo</h4>
+            <ol id="previewAcross" class="preview-clue-list"></ol>
+          </section>
+          <section>
+            <h4>Pionowo</h4>
+            <ol id="previewDown" class="preview-clue-list"></ol>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <script src="/admin.js"></script>
 </body>
 </html>

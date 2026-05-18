@@ -235,6 +235,7 @@ app.post('/api/check', (req, res) => {
     const raw = (answers[key] || '').toString();
     const got = raw
       .toUpperCase()
+      .replace(/Ł/g, 'L')
       .normalize('NFD')
       .replace(/[\u0300-\u036f]/g, '')
       .replace(/[^A-Z0-9]/g, '');
@@ -311,6 +312,22 @@ app.post('/api/admin/preview', requireAdmin, (req, res) => {
   const { clues } = req.body || {};
   if (!Array.isArray(clues)) return res.status(400).json({ error: 'clues array required' });
   res.json(generate(clues));
+});
+
+// Pełny podgląd wygenerowanej krzyżówki dla dowolnej daty (także przyszłej).
+// Zwraca odpowiedzi — dostępne tylko dla admina.
+app.get('/api/admin/puzzle/:date', requireAdmin, (req, res) => {
+  const date = req.params.date;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return res.status(400).json({ error: 'bad date' });
+  const puzzle = getPuzzleForDate(date);
+  if (!puzzle) return res.status(404).json({ error: 'no puzzle' });
+  res.json({
+    date: puzzle.date,
+    size: puzzle.size,
+    cells: puzzle.cells,
+    placements: puzzle.placements,
+    unplaced: puzzle.unplaced || [],
+  });
 });
 
 // Past dates with existing puzzles (for calendar dot indicators).

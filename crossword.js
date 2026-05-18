@@ -8,8 +8,10 @@ const MAX_SIZE = 21;
 
 function normalize(word) {
   // Strip diacritics for grid letters (but keep originals in clue answer for display logic if needed).
+  // Ł/ł nie rozkłada się przez NFD — trzeba je podmienić ręcznie.
   return word
     .toUpperCase()
+    .replace(/Ł/g, 'L')
     .normalize('NFD')
     .replace(/[\u0300-\u036f]/g, '')
     .replace(/[^A-Z0-9]/g, '');

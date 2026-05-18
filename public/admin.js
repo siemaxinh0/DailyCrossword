@@ -150,11 +150,15 @@ function renderScheduleList() {
       <div class="sched-date">${date}${isPast ? ' <span class="muted">(minęła)</span>' : ''}</div>
       <div class="sched-preview">${ids.length} hasła: <span class="muted">${previews}${more}</span></div>
       <div class="sched-actions">
+        <button class="ghost" type="button" data-preview="${date}">podgląd</button>
         <button class="ghost" type="button" data-edit="${date}">edytuj</button>
         <button class="del" type="button" data-del="${date}">usuń</button>
       </div>`;
     ul.appendChild(li);
   }
+  ul.querySelectorAll('button[data-preview]').forEach((b) => b.addEventListener('click', () => {
+    openPreview(b.dataset.preview);
+  }));
   ul.querySelectorAll('button[data-edit]').forEach((b) => b.addEventListener('click', () => {
     const date = b.dataset.edit;
     document.getElementById('scheduleDate').value = date;
@@ -171,6 +175,103 @@ function renderScheduleList() {
 
 function escapeHtml(s) {
   return String(s).replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+async function openPreview(date) {
+  const modal = document.getElementById('previewModal');
+  const titleEl = document.getElementById('previewTitle');
+  const grid = document.getElementById('previewGrid');
+  const across = document.getElementById('previewAcross');
+  const down = document.getElementById('previewDown');
+  const unplacedEl = document.getElementById('previewUnplaced');
+  titleEl.textContent = date;
+  grid.innerHTML = '<div class="muted" style="padding:24px">Ładowanie…</div>';
+  across.innerHTML = '';
+  down.innerHTML = '';
+  unplacedEl.hidden = true;
+  unplacedEl.textContent = '';
+  modal.hidden = false;
+
+  let puzzle;
+  try {
+    const r = await api(`/api/admin/puzzle/${date}`);
+    if (!r.ok) {
+      const data = await r.json().catch(() => ({}));
+      grid.innerHTML = `<div class="muted" style="padding:24px">${escapeHtml(data.error || 'Nie udało się wczytać podglądu.')}</div>`;
+      return;
+    }
+    puzzle = await r.json();
+  } catch {
+    grid.innerHTML = '<div class="muted" style="padding:24px">Brak połączenia z serwerem.</div>';
+    return;
+  }
+
+  const { rows, cols } = puzzle.size;
+  grid.style.gridTemplateColumns = `repeat(${cols}, var(--cell-size, 32px))`;
+  grid.style.setProperty('--cell-size', `${cols > 14 ? 26 : 32}px`);
+  grid.innerHTML = '';
+  // Build expected letter per cell from placements — preferuj wersję z polskimi znakami.
+  const letters = {};
+  for (const p of puzzle.placements) {
+    const display = (p.answerDisplay && p.answerDisplay.length === p.answer.length)
+      ? p.answerDisplay
+      : p.answer;
+    for (let i = 0; i < p.length; i++) {
+      const r = p.row + (p.dir === 'down' ? i : 0);
+      const c = p.col + (p.dir === 'across' ? i : 0);
+      const key = `${r},${c}`;
+      // Pierwszeństwo: litera ze znakiem diakrytycznym, jeśli już ustawiona — nie nadpisuj literą bazową.
+      const ch = display[i];
+      if (!letters[key] || (letters[key] === p.answer[i] && ch !== p.answer[i])) {
+        letters[key] = ch;
+      }
+    }
+  }
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const cellData = puzzle.cells[r][c];
+      const div = document.createElement('div');
+      div.className = 'cell preview-cell' + (cellData ? '' : ' block');
+      if (cellData) {
+        if (cellData.number) {
+          const n = document.createElement('span');
+          n.className = 'num';
+          n.textContent = cellData.number;
+          div.appendChild(n);
+        }
+        const span = document.createElement('span');
+        span.className = 'letter';
+        span.textContent = letters[`${r},${c}`] || '';
+        div.appendChild(span);
+      }
+      grid.appendChild(div);
+    }
+  }
+
+  const renderList = (ul, items) => {
+    items.sort((a, b) => a.number - b.number);
+    for (const p of items) {
+      const li = document.createElement('li');
+      const mediaTag = p.type === 'image' ? ' <span class="tag">obraz</span>' :
+                       p.type === 'audio' ? ' <span class="tag">dźwięk</span>' : '';
+      const ans = p.answerDisplay || p.answer;
+      li.innerHTML = `<span class="num">${p.number}.</span> <span>${escapeHtml(p.clue)} <span class="muted">(${p.length})</span>${mediaTag} — <strong class="ans">${escapeHtml(ans)}</strong></span>`;
+      ul.appendChild(li);
+    }
+  };
+  renderList(across, puzzle.placements.filter((p) => p.dir === 'across'));
+  renderList(down, puzzle.placements.filter((p) => p.dir === 'down'));
+
+  if (puzzle.unplaced && puzzle.unplaced.length) {
+    unplacedEl.hidden = false;
+    const names = puzzle.unplaced.map((u) => escapeHtml(u.answer || u.clue || '?')).join(', ');
+    unplacedEl.innerHTML = `Nie udało się umieścić: ${names}`;
+  }
+}
+
+function closePreview() {
+  const modal = document.getElementById('previewModal');
+  if (modal) modal.hidden = true;
 }
 
 function updateMediaUi() {
@@ -278,6 +379,13 @@ document.addEventListener('DOMContentLoaded', () => {
     setError('#scheduleError',''); setError('#scheduleOk','');
     renderSchedulePicker();
   });
+  document.querySelectorAll('#previewModal [data-close]').forEach((el) =>
+    el.addEventListener('click', closePreview)
+  );
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closePreview();
+  });
+
   $('#saveSchedule').addEventListener('click', async () => {
     setError('#scheduleError',''); setError('#scheduleOk','');
     const date = document.getElementById('scheduleDate').value;

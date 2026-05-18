@@ -1,78 +1,39 @@
 {
-  "2026-05-17": {
-    "date": "2026-05-17",
+  "2026-05-18": {
+    "date": "2026-05-18",
     "size": {
       "rows": 13,
-      "cols": 15
+      "cols": 12
     },
     "cells": [
-      [
-        {
-          "letter": "E",
-          "number": 1
-        },
-        {
-          "letter": "V"
-        },
-        {
-          "letter": "E"
-        },
-        {
-          "letter": "R"
-        },
-        {
-          "letter": "E",
-          "number": 2
-        },
-        {
-          "letter": "S"
-        },
-        {
-          "letter": "T"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "I"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
       [
         null,
         null,
         {
           "letter": "M",
-          "number": 3
+          "number": 1
         },
         null,
-        {
-          "letter": "N"
-        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
         null,
         {
-          "letter": "T",
-          "number": 4
+          "letter": "N",
+          "number": 2
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "L"
         },
         null,
         null,
@@ -85,6 +46,67 @@
       ],
       [
         null,
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "M",
+          "number": 3
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "J"
+        },
+        {
+          "letter": "K"
+        },
+        {
+          "letter": "O",
+          "number": 4
+        },
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "G"
+        },
+        null,
+        null,
+        null,
+        null
+      ],
+      [
         {
           "letter": "W",
           "number": 5
@@ -113,66 +135,15 @@
         null,
         null,
         null,
-        null,
-        null,
         null
       ],
       [
         null,
         null,
-        {
-          "letter": "T"
-        },
-        null,
-        {
-          "letter": "T"
-        },
-        null,
-        {
-          "letter": "R"
-        },
         null,
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        {
-          "letter": "E"
-        },
-        null,
-        {
-          "letter": "E"
-        },
-        null,
-        {
-          "letter": "A"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        {
-          "letter": "J"
-        },
-        null,
-        {
-          "letter": "I"
-        },
         null,
         {
           "letter": "N"
@@ -180,146 +151,94 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       [
         null,
         null,
-        {
-          "letter": "K"
-        },
-        null,
-        {
-          "letter": "N"
-        },
-        null,
-        {
-          "letter": "T"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        {
-          "letter": "O"
-        },
         null,
         null,
         {
           "letter": "M",
           "number": 6
         },
-        {
-          "letter": "I"
-        },
-        {
-          "letter": "C"
-        },
-        {
-          "letter": "K"
-        },
-        {
-          "letter": "I"
-        },
+        null,
+        null,
         {
           "letter": "E"
         },
-        {
-          "letter": "W"
-        },
-        {
-          "letter": "I"
-        },
-        {
-          "letter": "C"
-        },
-        {
-          "letter": "Z",
-          "number": 7
-        }
+        null,
+        null,
+        null,
+        null
       ],
       [
         null,
         null,
         null,
         null,
+        {
+          "letter": "A"
+        },
         null,
         null,
         {
-          "letter": "N"
+          "letter": "S"
         },
         null,
         null,
         null,
+        null
+      ],
+      [
         null,
         null,
         null,
         null,
         {
           "letter": "L"
-        }
+        },
+        null,
+        null,
+        {
+          "letter": "O"
+        },
+        null,
+        null,
+        null,
+        null
       ],
       [
         null,
         null,
+        null,
         {
-          "letter": "P",
-          "number": 8
+          "letter": "T",
+          "number": 7
         },
         {
-          "letter": "Y"
+          "letter": "A"
         },
         {
-          "letter": "T"
+          "letter": "R"
         },
         {
-          "letter": "H"
-        },
-        {
-          "letter": "O"
+          "letter": "A"
         },
         {
           "letter": "N"
         },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "O"
-        }
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         {
           "letter": "T"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "N"
+        },
+        {
+          "letter": "O"
         }
       ],
       [
@@ -327,46 +246,59 @@
         null,
         null,
         null,
+        {
+          "letter": "W"
+        },
         null,
         null,
         null,
         null,
         null,
         null,
+        null
+      ],
+      [
         null,
         null,
         null,
         null,
         {
-          "letter": "O"
-        }
+          "letter": "I"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     ],
     "placements": [
       {
-        "id": "s02",
-        "answer": "EVEREST",
-        "answerDisplay": "EVEREST",
-        "clue": "Najwyższy szczyt świata",
+        "id": "78e2f75bdb5c",
+        "answer": "MILA",
+        "answerDisplay": "MILA",
+        "clue": "Nazwisko piłkarza który strzelił drugiego gola w meczu Polska-Niemcy 2:0",
         "type": "text",
         "media": null,
         "row": 0,
-        "col": 0,
-        "dir": "across",
-        "length": 7,
+        "col": 2,
+        "dir": "down",
+        "length": 4,
         "number": 1
       },
       {
-        "id": "s14",
-        "answer": "EINSTEIN",
-        "answerDisplay": "EINSTEIN",
-        "clue": "Twórca teorii względności",
+        "id": "s09",
+        "answer": "NIL",
+        "answerDisplay": "NIL",
+        "clue": "Najdłuższa rzeka świata",
         "type": "text",
         "media": null,
-        "row": 0,
-        "col": 4,
-        "dir": "down",
-        "length": 8,
+        "row": 1,
+        "col": 1,
+        "dir": "across",
+        "length": 3,
         "number": 2
       },
       {
@@ -374,455 +306,26 @@
         "answer": "MATEJKO",
         "answerDisplay": "MATEJKO",
         "clue": "Polski malarz batalista, autor 'Bitwy pod Grunwaldem'",
-        "type": "text",
-        "media": null,
-        "row": 2,
-        "col": 2,
-        "dir": "down",
-        "length": 7,
-        "number": 3
-      },
-      {
-        "id": "s11",
-        "answer": "TARANTINO",
-        "answerDisplay": "TARANTINO",
-        "clue": "Reżyser 'Pulp Fiction'",
-        "type": "text",
-        "media": null,
-        "row": 2,
-        "col": 6,
-        "dir": "down",
-        "length": 9,
-        "number": 4
-      },
-      {
-        "id": "s01",
-        "answer": "WARSZAWA",
-        "answerDisplay": "WARSZAWA",
-        "clue": "Stolica Polski",
         "type": "text",
         "media": null,
         "row": 3,
         "col": 1,
         "dir": "across",
-        "length": 8,
-        "number": 5
-      },
-      {
-        "id": "s04",
-        "answer": "MICKIEWICZ",
-        "answerDisplay": "MICKIEWICZ",
-        "clue": "Autor 'Pana Tadeusza'",
-        "type": "text",
-        "media": null,
-        "row": 8,
-        "col": 5,
-        "dir": "across",
-        "length": 10,
-        "number": 6
-      },
-      {
-        "id": "s06",
-        "answer": "ZLOTO",
-        "answerDisplay": "ZLOTO",
-        "clue": "Pierwiastek o symbolu Au",
-        "type": "text",
-        "media": null,
-        "row": 8,
-        "col": 14,
-        "dir": "down",
-        "length": 5,
-        "number": 7
-      },
-      {
-        "id": "s10",
-        "answer": "PYTHON",
-        "answerDisplay": "PYTHON",
-        "clue": "Język programowania nazwany od węża",
-        "type": "text",
-        "media": null,
-        "row": 10,
-        "col": 2,
-        "dir": "across",
-        "length": 6,
-        "number": 8
-      }
-    ],
-    "unplaced": []
-  },
-  "2026-05-18": {
-    "date": "2026-05-18",
-    "size": {
-      "rows": 13,
-      "cols": 15
-    },
-    "cells": [
-      [
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "E",
-          "number": 1
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "V"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "E"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "R"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        {
-          "letter": "M",
-          "number": 2
-        },
-        null,
-        {
-          "letter": "E"
-        },
-        null,
-        {
-          "letter": "T",
-          "number": 3
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        {
-          "letter": "W",
-          "number": 4
-        },
-        {
-          "letter": "A"
-        },
-        {
-          "letter": "R"
-        },
-        {
-          "letter": "S"
-        },
-        {
-          "letter": "Z"
-        },
-        {
-          "letter": "A"
-        },
-        {
-          "letter": "W"
-        },
-        {
-          "letter": "A"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        {
-          "letter": "T"
-        },
-        null,
-        {
-          "letter": "T"
-        },
-        null,
-        {
-          "letter": "R"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        {
-          "letter": "E"
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "A"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        {
-          "letter": "J"
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "N"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        {
-          "letter": "T",
-          "number": 5
-        },
-        {
-          "letter": "O"
-        },
-        {
-          "letter": "K"
-        },
-        {
-          "letter": "I"
-        },
-        {
-          "letter": "O"
-        },
-        null,
-        {
-          "letter": "T"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        {
-          "letter": "U"
-        },
-        null,
-        {
-          "letter": "O"
-        },
-        null,
-        null,
-        {
-          "letter": "M",
-          "number": 6
-        },
-        {
-          "letter": "I"
-        },
-        {
-          "letter": "C"
-        },
-        {
-          "letter": "K"
-        },
-        {
-          "letter": "I"
-        },
-        {
-          "letter": "E"
-        },
-        {
-          "letter": "W"
-        },
-        {
-          "letter": "I"
-        },
-        {
-          "letter": "C"
-        },
-        {
-          "letter": "Z"
-        }
-      ],
-      [
-        {
-          "letter": "S"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "N"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        {
-          "letter": "K"
-        },
-        null,
-        {
-          "letter": "P",
-          "number": 7
-        },
-        {
-          "letter": "Y"
-        },
-        {
-          "letter": "T"
-        },
-        {
-          "letter": "H"
-        },
-        {
-          "letter": "O"
-        },
-        {
-          "letter": "N"
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ]
-    ],
-    "placements": [
-      {
-        "id": "s02",
-        "answer": "EVEREST",
-        "answerDisplay": "EVEREST",
-        "clue": "Najwyższy szczyt świata",
-        "type": "text",
-        "media": null,
-        "row": 0,
-        "col": 4,
-        "dir": "down",
         "length": 7,
-        "number": 1
-      },
-      {
-        "id": "s15",
-        "answer": "MATEJKO",
-        "answerDisplay": "MATEJKO",
-        "clue": "Polski malarz batalista, autor 'Bitwy pod Grunwaldem'",
-        "type": "text",
-        "media": null,
-        "row": 4,
-        "col": 2,
-        "dir": "down",
-        "length": 7,
-        "number": 2
-      },
-      {
-        "id": "s11",
-        "answer": "TARANTINO",
-        "answerDisplay": "TARANTINO",
-        "clue": "Reżyser 'Pulp Fiction'",
-        "type": "text",
-        "media": null,
-        "row": 4,
-        "col": 6,
-        "dir": "down",
-        "length": 9,
         "number": 3
+      },
+      {
+        "id": "b924fbd9664c",
+        "answer": "OGANESON",
+        "answerDisplay": "OGANESON",
+        "clue": "Najnowszy odkryty pierwiastek chemiczny.",
+        "type": "text",
+        "media": null,
+        "row": 3,
+        "col": 7,
+        "dir": "down",
+        "length": 8,
+        "number": 4
       },
       {
         "id": "s01",
@@ -832,64 +335,44 @@
         "type": "text",
         "media": null,
         "row": 5,
-        "col": 1,
+        "col": 0,
         "dir": "across",
         "length": 8,
-        "number": 4
-      },
-      {
-        "id": "s13",
-        "answer": "TOKIO",
-        "answerDisplay": "TOKIO",
-        "clue": "Stolica Japonii",
-        "type": "text",
-        "media": null,
-        "row": 9,
-        "col": 0,
-        "dir": "across",
-        "length": 5,
         "number": 5
       },
       {
-        "id": "68aa28e3caa0",
-        "answer": "TUSK",
-        "answerDisplay": "TUSK",
-        "clue": "Podaj nazwisko tego zbrodniarza",
+        "id": "710520dcd210",
+        "answer": "MALAWI",
+        "answerDisplay": "MALAWI",
+        "clue": "Jakiego kraju jest to flaga?",
         "type": "image",
-        "media": "/uploads/eb6354cff262553e.jpg",
-        "row": 9,
-        "col": 0,
+        "media": "/uploads/b53997fdb70749fa.png",
+        "row": 7,
+        "col": 4,
         "dir": "down",
-        "length": 4,
-        "number": 5
-      },
-      {
-        "id": "s04",
-        "answer": "MICKIEWICZ",
-        "answerDisplay": "MICKIEWICZ",
-        "clue": "Autor 'Pana Tadeusza'",
-        "type": "text",
-        "media": null,
-        "row": 10,
-        "col": 5,
-        "dir": "across",
-        "length": 10,
+        "length": 6,
         "number": 6
       },
       {
-        "id": "s10",
-        "answer": "PYTHON",
-        "answerDisplay": "PYTHON",
-        "clue": "Język programowania nazwany od węża",
+        "id": "s11",
+        "answer": "TARANTINO",
+        "answerDisplay": "TARANTINO",
+        "clue": "Reżyser 'Pulp Fiction'",
         "type": "text",
         "media": null,
-        "row": 12,
-        "col": 2,
+        "row": 10,
+        "col": 3,
         "dir": "across",
-        "length": 6,
+        "length": 9,
         "number": 7
       }
     ],
-    "unplaced": []
+    "unplaced": [
+      {
+        "id": "s07",
+        "answer": "PARYZ",
+        "clue": "Stolica Francji"
+      }
+    ]
   }
 }
