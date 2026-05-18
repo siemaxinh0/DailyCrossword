@@ -164,9 +164,13 @@ function blockWrites(req, res, next) {
 }
 
 // --- Multer for file uploads ---
+// UWAGA: multer.diskStorage przy stringowym `destination` woła mkdirp.sync()
+// w konstruktorze — to wywala EROFS na serverless. Dlatego destination
+// podajemy jako funkcję (mkdir leci dopiero przy realnym uploadzie,
+// a w READ_ONLY upload jest blokowany przez middleware `blockWrites`).
 const upload = multer({
   storage: multer.diskStorage({
-    destination: UPLOAD_DIR,
+    destination: (req, file, cb) => cb(null, UPLOAD_DIR),
     filename: (req, file, cb) => {
       const ext = path.extname(file.originalname).toLowerCase();
       const id = crypto.randomBytes(8).toString('hex');
