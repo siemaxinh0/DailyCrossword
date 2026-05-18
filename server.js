@@ -12,6 +12,9 @@ const PORT = process.env.PORT || 3000;
 const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || 'admin';
 const DAILY_COUNT = 8; // how many clues per daily puzzle
 const LAUNCH_KEY = '2026-05-18'; // pierwsze wydanie
+// Vercel (and any serverless target) ma read-only filesystem poza /tmp.
+// W tym trybie blokujemy zapisy i trzymamy cache w pamięci procesu.
+const READ_ONLY = process.env.READ_ONLY === '1' || !!process.env.VERCEL;
 
 const DATA_DIR = path.join(__dirname, 'data');
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
@@ -19,13 +22,37 @@ const CLUES_FILE = path.join(DATA_DIR, 'clues.json');
 const PUZZLES_FILE = path.join(DATA_DIR, 'puzzles.json');
 const SCHEDULES_FILE = path.join(DATA_DIR, 'schedules.json');
 
-fs.mkdirSync(UPLOAD_DIR, { recursive: true });
-if (!fs.existsSync(CLUES_FILE)) fs.writeFileSync(CLUES_FILE, '[]');
-if (!fs.existsSync(PUZZLES_FILE)) fs.writeFileSync(PUZZLES_FILE, '{}');
-if (!fs.existsSync(SCHEDULES_FILE)) fs.writeFileSync(SCHEDULES_FILE, '{}');
+if (!READ_ONLY) {
+  fs.mkdirSync(UPLOAD_DIR, { recursive: true });
+  if (!fs.existsSync(CLUES_FILE)) fs.writeFileSync(CLUES_FILE, '[]');
+  if (!fs.existsSync(PUZZLES_FILE)) fs.writeFileSync(PUZZLES_FILE, '{}');
+  if (!fs.existsSync(SCHEDULES_FILE)) fs.writeFileSync(SCHEDULES_FILE, '{}');
+}
 
-function readJSON(file) { return JSON.parse(fs.readFileSync(file, 'utf-8')); }
-function writeJSON(file, data) { fs.writeFileSync(file, JSON.stringify(data, null, 2)); }
+// In-memory mirror used in read-only mode (Vercel).
+const memCache = {
+  puzzles: null, // lazy-loaded
+};
+
+function readJSON(file) {
+  try { return JSON.parse(fs.readFileSync(file, 'utf-8')); }
+  catch { return file === CLUES_FILE ? [] : {}; }
+}
+function writeJSON(file, data) {
+  if (READ_ONLY) {
+    if (file === PUZZLES_FILE) memCache.puzzles = data;
+    return; // wszystkie inne zapisy są no-opem na produkcji
+  }
+  fs.writeFileSync(file, JSON.stringify(data, null, 2));
+}
+
+function readPuzzles() {
+  if (READ_ONLY) {
+    if (!memCache.puzzles) memCache.puzzles = readJSON(PUZZLES_FILE);
+    return memCache.puzzles;
+  }
+  return readJSON(PUZZLES_FILE);
+}
 
 // --- Deterministic daily selection ---
 function todayKey(d = new Date()) {
@@ -85,7 +112,7 @@ function buildPuzzleForDate(dateKey) {
 }
 
 function getPuzzleForDate(dateKey) {
-  const cache = readJSON(PUZZLES_FILE);
+  const cache = readPuzzles();
   if (cache[dateKey]) return cache[dateKey];
   const puzzle = buildPuzzleForDate(dateKey);
   if (puzzle) {
@@ -99,7 +126,7 @@ function getPuzzleForDate(dateKey) {
 // Today is preserved so the puzzle does NOT change mid-day after edits.
 function clearFuturePuzzles() {
   const today = todayKey();
-  const cache = readJSON(PUZZLES_FILE);
+  const cache = readPuzzles();
   for (const k of Object.keys(cache)) {
     if (k > today) delete cache[k];
   }
@@ -107,7 +134,7 @@ function clearFuturePuzzles() {
 }
 
 function clearCachedPuzzle(dateKey) {
-  const cache = readJSON(PUZZLES_FILE);
+  const cache = readPuzzles();
   if (cache[dateKey]) {
     delete cache[dateKey];
     writeJSON(PUZZLES_FILE, cache);
@@ -122,6 +149,11 @@ app.use(express.static(path.join(__dirname, 'public')));
 function requireAdmin(req, res, next) {
   const token = req.headers['x-admin-token'] || req.query.token;
   if (token !== ADMIN_PASSWORD) return res.status(401).json({ error: 'unauthorized' });
+  next();
+}
+
+function blockWrites(req, res, next) {
+  if (READ_ONLY) return res.status(503).json({ error: 'read-only deploy. Edytuj dane lokalnie i wypchnij commit.' });
   next();
 }
 
@@ -226,7 +258,7 @@ app.get('/api/admin/clues', requireAdmin, (req, res) => {
   res.json(readJSON(CLUES_FILE));
 });
 
-app.post('/api/admin/clues', requireAdmin, (req, res) => {
+app.post('/api/admin/clues', requireAdmin, blockWrites, (req, res) => {
   const { clue, answer, type, media } = req.body || {};
   if (!clue || !answer) return res.status(400).json({ error: 'clue and answer required' });
   const t = ['text', 'audio', 'image'].includes(type) ? type : 'text';
@@ -238,7 +270,7 @@ app.post('/api/admin/clues', requireAdmin, (req, res) => {
   res.json({ ok: true, id });
 });
 
-app.delete('/api/admin/clues/:id', requireAdmin, (req, res) => {
+app.delete('/api/admin/clues/:id', requireAdmin, blockWrites, (req, res) => {
   const list = readJSON(CLUES_FILE);
   const idx = list.findIndex((c) => c.id === req.params.id);
   if (idx < 0) return res.status(404).json({ error: 'not found' });
@@ -253,7 +285,7 @@ app.delete('/api/admin/clues/:id', requireAdmin, (req, res) => {
   res.json({ ok: true });
 });
 
-app.post('/api/admin/upload', requireAdmin, upload.single('file'), (req, res) => {
+app.post('/api/admin/upload', requireAdmin, blockWrites, upload.single('file'), (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'no file' });
   res.json({ url: `/uploads/${req.file.filename}` });
 });
@@ -273,7 +305,7 @@ app.post('/api/admin/preview', requireAdmin, (req, res) => {
 
 // Past dates with existing puzzles (for calendar dot indicators).
 app.get('/api/archive', (req, res) => {
-  const cache = readJSON(PUZZLES_FILE);
+  const cache = readPuzzles();
   res.json({ dates: Object.keys(cache).sort(), today: todayKey() });
 });
 
@@ -283,7 +315,7 @@ app.get('/api/admin/schedules', requireAdmin, (req, res) => {
   res.json({ schedules, today: todayKey() });
 });
 
-app.put('/api/admin/schedule/:date', requireAdmin, (req, res) => {
+app.put('/api/admin/schedule/:date', requireAdmin, blockWrites, (req, res) => {
   const date = req.params.date;
   if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return res.status(400).json({ error: 'bad date' });
   if (date <= todayKey()) return res.status(400).json({ error: 'date must be in the future' });
@@ -302,7 +334,7 @@ app.put('/api/admin/schedule/:date', requireAdmin, (req, res) => {
   res.json({ ok: true, date, count: filtered.length });
 });
 
-app.delete('/api/admin/schedule/:date', requireAdmin, (req, res) => {
+app.delete('/api/admin/schedule/:date', requireAdmin, blockWrites, (req, res) => {
   const date = req.params.date;
   const schedules = readJSON(SCHEDULES_FILE);
   if (schedules[date]) {
@@ -313,7 +345,13 @@ app.delete('/api/admin/schedule/:date', requireAdmin, (req, res) => {
   res.json({ ok: true });
 });
 
-app.listen(PORT, () => {
-  console.log(`Codzienna Krzyżówka działa na http://localhost:${PORT}`);
-  console.log(`Hasło administratora: ${ADMIN_PASSWORD}`);
-});
+// Eksport dla serverless (Vercel). Lokalnie nadal startujemy nasłuch.
+module.exports = app;
+
+if (require.main === module && !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Codzienna Krzyżówka działa na http://localhost:${PORT}`);
+    console.log(`Hasło administratora: ${ADMIN_PASSWORD}`);
+    if (READ_ONLY) console.log('Tryb READ_ONLY — panel admina jest wyłączony.');
+  });
+}
