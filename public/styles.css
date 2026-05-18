@@ -127,9 +127,10 @@ body::before {
 /* ----------------- Layout ----------------- */
 .layout {
   display: grid;
-  grid-template-columns: minmax(220px, 1fr) minmax(420px, 2.2fr) minmax(220px, 1fr);
+  grid-template-columns: 260px minmax(0, 1fr) 260px;
   gap: 36px;
   padding-top: 28px;
+  align-items: start;
 }
 @media (max-width: 1000px) {
   .layout { grid-template-columns: 1fr; }
@@ -138,7 +139,7 @@ body::before {
   .paper { padding: 24px 18px 40px; }
 }
 
-.rail { padding-top: 6px; }
+.rail { padding-top: 6px; min-width: 0; }
 .rail-label {
   font-family: var(--mono);
   font-size: 11px; letter-spacing: .22em; text-transform: uppercase;
@@ -188,14 +189,68 @@ body::before {
   vertical-align: middle;
   color: var(--muted);
 }
+.clue-list .clue-text { display: inline; }
+.clue-list .clue-media {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px; height: 26px;
+  margin-left: 6px;
+  padding: 0;
+  border: 1px solid var(--rule);
+  background: var(--paper-2);
+  color: var(--ink-soft);
+  vertical-align: middle;
+  cursor: pointer;
+  transition: background .15s ease, color .15s ease, transform .08s ease;
+}
+.clue-list .clue-media:hover {
+  background: var(--accent);
+  color: var(--paper);
+  border-color: var(--accent);
+}
+.clue-list li.active .clue-media {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--paper);
+}
+
+/* Media lightbox */
+.media-modal-card {
+  max-width: 720px;
+  background: var(--paper);
+}
+.media-modal-card .mp-clue {
+  font-family: var(--serif);
+  font-size: 19px;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+.media-modal-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  border: 1px solid var(--rule);
+  padding: 14px;
+  min-height: 200px;
+}
+.media-modal-body img {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  display: block;
+}
+.media-modal-body audio { width: 100%; }
 
 /* ----------------- Grid ----------------- */
-.stage { display: flex; flex-direction: column; align-items: center; gap: 22px; }
+.stage { display: flex; flex-direction: column; align-items: center; gap: 22px; min-width: 0; width: 100%; }
 
 .grid-wrap {
   position: relative;
   display: flex; flex-direction: column; align-items: center; gap: 18px;
   width: 100%;
+  min-width: 0;
 }
 
 .grid {
@@ -205,10 +260,11 @@ body::before {
   padding: 2px;
   border: 1px solid var(--ink);
   box-shadow: var(--shadow);
+  max-width: 100%;
 }
 
 .cell {
-  width: 44px; height: 44px;
+  width: var(--cell-size, 44px); height: var(--cell-size, 44px);
   background: var(--cell);
   position: relative;
   display: flex; align-items: center; justify-content: center;
@@ -242,7 +298,6 @@ body::before {
 .cell.bad input { color: var(--accent); }
 
 @media (max-width: 700px) {
-  .cell { width: 34px; height: 34px; }
   .cell input { font-size: 18px; }
 }
 
@@ -518,3 +573,92 @@ input:focus, textarea:focus, select:focus { outline: 2px solid var(--accent); ou
   font-family: var(--mono); font-size: 12px; letter-spacing: .12em; text-transform: uppercase;
 }
 .bank-list .del:hover { background: var(--accent); color: var(--paper); }
+
+/* Scheduler */
+.sched-subhead {
+  margin: 28px 0 10px;
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 18px;
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
+}
+.schedule-picker {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid var(--rule);
+  background: #fff;
+}
+.schedule-picker li {
+  border-bottom: 1px solid var(--paper-2);
+}
+.schedule-picker li:last-child { border-bottom: 0; }
+.schedule-picker label {
+  display: grid;
+  grid-template-columns: 22px 60px auto 1fr;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.schedule-picker label:hover { background: var(--paper-2); }
+.schedule-picker input[type="checkbox"] { width: 16px; height: 16px; margin: 0; cursor: pointer; }
+.schedule-picker .tag {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted);
+}
+.schedule-picker .ans { font-family: var(--mono); font-weight: 600; letter-spacing: .04em; }
+
+.schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 8px;
+}
+.schedule-list li {
+  display: grid;
+  grid-template-columns: 130px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 10px 12px;
+  border: 1px solid var(--rule);
+  background: #fff;
+  font-size: 14px;
+}
+.schedule-list .sched-date {
+  font-family: var(--mono);
+  font-weight: 600;
+  letter-spacing: .04em;
+}
+.schedule-list .sched-preview {
+  font-family: var(--serif);
+  font-size: 14px;
+}
+.schedule-list .sched-actions { display: flex; gap: 6px; }
+.schedule-list .ghost {
+  border: 0;
+  background: transparent;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+}
+.schedule-list .ghost:hover { background: var(--ink); color: var(--paper); }
+.schedule-list .del {
+  border: 0;
+  background: transparent;
+  color: var(--accent);
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+.schedule-list .del:hover { background: var(--accent); color: var(--paper); }

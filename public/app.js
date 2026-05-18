@@ -78,7 +78,6 @@ function render() {
   const grid = $('#grid');
   grid.style.gridTemplateColumns = `repeat(${cols}, var(--cell-size, 44px))`;
   grid.innerHTML = '';
-
   state.cellMap = {};
   for (const p of puzzle.placements) {
     for (let i = 0; i < p.length; i++) {
@@ -122,7 +121,27 @@ function render() {
   const down   = puzzle.placements.filter((p) => p.dir === 'down').sort((a,b)=>a.number-b.number);
   renderClueList($('#cluesAcross'), across);
   renderClueList($('#cluesDown'), down);
+
+  fitGrid();
 }
+
+function fitGrid() {
+  const grid = document.getElementById('grid');
+  if (!grid || !state.puzzle) return;
+  const { cols } = state.puzzle.size;
+  const wrap = grid.parentElement;
+  // Available width inside the center column (minus grid's 2px padding on each side).
+  const available = Math.max(0, (wrap?.clientWidth || grid.clientWidth) - 4);
+  // Mobile floor of 22px, desktop cap of 44px.
+  const max = 44;
+  const min = window.innerWidth <= 700 ? 22 : 26;
+  let size = Math.floor(available / cols);
+  if (!isFinite(size) || size <= 0) size = max;
+  size = Math.max(min, Math.min(max, size));
+  grid.style.setProperty('--cell-size', `${size}px`);
+}
+
+window.addEventListener('resize', () => fitGrid());
 
 function renderClueList(ul, items) {
   ul.innerHTML = '';
@@ -130,11 +149,53 @@ function renderClueList(ul, items) {
     const li = document.createElement('li');
     li.dataset.number = p.number;
     li.dataset.dir = p.dir;
-    const tag = p.type !== 'text' ? `<span class="media-tag">${p.type === 'audio' ? 'dźwięk' : 'obraz'}</span>` : '';
-    li.innerHTML = `<span class="num">${p.number}.</span><span>${escapeHtml(p.clue)} <span class="muted">(${p.length})</span> ${tag}</span>`;
+    let mediaBtn = '';
+    if (p.type === 'image' && p.media) {
+      mediaBtn = `<button class="clue-media" type="button" data-kind="image" title="Pokaż zdjęcie" aria-label="Pokaż zdjęcie do hasła">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
+          <rect x="3.5" y="4.5" width="17" height="15"/><circle cx="9" cy="10" r="1.6"/><path d="M4 17l5-5 5 4 3-3 3 3"/>
+        </svg></button>`;
+    } else if (p.type === 'audio' && p.media) {
+      mediaBtn = `<button class="clue-media" type="button" data-kind="audio" title="Odtwórz dźwięk" aria-label="Odtwórz dźwięk do hasla">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
+          <path d="M4 9v6h4l5 4V5L8 9H4z"/><path d="M16 8c1.5 1.5 1.5 6.5 0 8"/>
+        </svg></button>`;
+    }
+    li.innerHTML = `<span class="num">${p.number}.</span><span class="clue-text">${escapeHtml(p.clue)} <span class="muted">(${p.length})</span> ${mediaBtn}</span>`;
+    const btn = li.querySelector('.clue-media');
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openMediaModal(p);
+      });
+    }
     li.addEventListener('click', () => focusEntry(p));
     ul.appendChild(li);
   }
+}
+
+function openMediaModal(p) {
+  const modal = $('#mediaModal');
+  const title = $('#mediaModalTitle');
+  const clueEl = $('#mediaModalClue');
+  const body = $('#mediaModalBody');
+  const dirLabel = p.dir === 'across' ? 'poziomo' : 'pionowo';
+  title.textContent = `${p.number} ${dirLabel}`;
+  clueEl.textContent = p.clue;
+  if (p.type === 'image') {
+    body.innerHTML = `<img src="${p.media}" alt="materiał do hasła" />`;
+  } else if (p.type === 'audio') {
+    body.innerHTML = `<audio controls autoplay src="${p.media}"></audio>`;
+  } else {
+    body.innerHTML = '';
+  }
+  modal.hidden = false;
+}
+
+function closeMediaModal() {
+  const modal = $('#mediaModal');
+  modal.hidden = true;
+  $('#mediaModalBody').innerHTML = ''; // stop audio
 }
 
 function escapeHtml(s) {
@@ -182,14 +243,9 @@ function highlightActive() {
   const li = document.querySelector(`.clue-list li[data-number="${p.number}"][data-dir="${p.dir}"]`);
   if (li) li.classList.add('active');
 
-  // Media panel
+  // Media panel — keep audio inline; images now open in lightbox modal.
   const mp = $('#mediaPanel');
-  if (p.type === 'image' && p.media) {
-    mp.hidden = false;
-    mp.innerHTML = `<div class="mp-head">${p.number} ${p.dir === 'across' ? 'poziomo' : 'pionowo'} · materiał wizualny</div>
-      <div class="mp-clue">${escapeHtml(p.clue)}</div>
-      <img src="${p.media}" alt="materiał do hasła" />`;
-  } else if (p.type === 'audio' && p.media) {
+  if (p.type === 'audio' && p.media) {
     mp.hidden = false;
     mp.innerHTML = `<div class="mp-head">${p.number} ${p.dir === 'across' ? 'poziomo' : 'pionowo'} · ścieżka dźwiękowa</div>
       <div class="mp-clue">${escapeHtml(p.clue)}</div>
@@ -399,6 +455,13 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   $('#openCalendar').addEventListener('click', openCalendar);
   $('#closeCalendar').addEventListener('click', () => $('#calendarModal').hidden = true);
+  $('#closeMedia').addEventListener('click', closeMediaModal);
+  $('#mediaModal').addEventListener('click', (e) => {
+    if (e.target.id === 'mediaModal') closeMediaModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !$('#mediaModal').hidden) closeMediaModal();
+  });
   $('#calendarModal').addEventListener('click', (e) => {
     if (e.target.id === 'calendarModal') $('#calendarModal').hidden = true;
   });

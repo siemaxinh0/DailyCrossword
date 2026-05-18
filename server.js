@@ -17,10 +17,12 @@ const DATA_DIR = path.join(__dirname, 'data');
 const UPLOAD_DIR = path.join(DATA_DIR, 'uploads');
 const CLUES_FILE = path.join(DATA_DIR, 'clues.json');
 const PUZZLES_FILE = path.join(DATA_DIR, 'puzzles.json');
+const SCHEDULES_FILE = path.join(DATA_DIR, 'schedules.json');
 
 fs.mkdirSync(UPLOAD_DIR, { recursive: true });
 if (!fs.existsSync(CLUES_FILE)) fs.writeFileSync(CLUES_FILE, '[]');
 if (!fs.existsSync(PUZZLES_FILE)) fs.writeFileSync(PUZZLES_FILE, '{}');
+if (!fs.existsSync(SCHEDULES_FILE)) fs.writeFileSync(SCHEDULES_FILE, '{}');
 
 function readJSON(file) { return JSON.parse(fs.readFileSync(file, 'utf-8')); }
 function writeJSON(file, data) { fs.writeFileSync(file, JSON.stringify(data, null, 2)); }
@@ -56,17 +58,27 @@ function seededShuffle(arr, seed) {
 function buildPuzzleForDate(dateKey) {
   const clues = readJSON(CLUES_FILE);
   if (clues.length === 0) return null;
-  const shuffled = seededShuffle(clues, dateKey);
-  // Try to build with progressively fewer clues if generation drops too many.
+  const schedules = readJSON(SCHEDULES_FILE);
+  const scheduledIds = Array.isArray(schedules[dateKey]) ? schedules[dateKey] : null;
+
   let bestPuzzle = null;
-  for (let count = Math.min(DAILY_COUNT, shuffled.length); count >= 3; count--) {
-    const subset = shuffled.slice(0, count);
-    const puzzle = generate(subset);
-    if (puzzle.placements.length >= Math.min(count, 4) && puzzle.unplaced.length <= 1) {
-      bestPuzzle = puzzle; break;
-    }
-    if (!bestPuzzle || puzzle.placements.length > bestPuzzle.placements.length) {
-      bestPuzzle = puzzle;
+  if (scheduledIds && scheduledIds.length) {
+    const byId = new Map(clues.map((c) => [c.id, c]));
+    const pool = scheduledIds.map((id) => byId.get(id)).filter(Boolean);
+    if (pool.length === 0) return null;
+    bestPuzzle = generate(pool);
+  } else {
+    const shuffled = seededShuffle(clues, dateKey);
+    // Try to build with progressively fewer clues if generation drops too many.
+    for (let count = Math.min(DAILY_COUNT, shuffled.length); count >= 3; count--) {
+      const subset = shuffled.slice(0, count);
+      const puzzle = generate(subset);
+      if (puzzle.placements.length >= Math.min(count, 4) && puzzle.unplaced.length <= 1) {
+        bestPuzzle = puzzle; break;
+      }
+      if (!bestPuzzle || puzzle.placements.length > bestPuzzle.placements.length) {
+        bestPuzzle = puzzle;
+      }
     }
   }
   return { date: dateKey, ...bestPuzzle };
@@ -83,15 +95,23 @@ function getPuzzleForDate(dateKey) {
   return puzzle;
 }
 
-// Invalidate cached puzzles when clue bank changes so tomorrow rebuilds.
+// Invalidate cached puzzles when clue bank changes so future days rebuild.
+// Today is preserved so the puzzle does NOT change mid-day after edits.
 function clearFuturePuzzles() {
-  // Keep past puzzles for archive integrity; clear today + future.
   const today = todayKey();
   const cache = readJSON(PUZZLES_FILE);
   for (const k of Object.keys(cache)) {
-    if (k >= today) delete cache[k];
+    if (k > today) delete cache[k];
   }
   writeJSON(PUZZLES_FILE, cache);
+}
+
+function clearCachedPuzzle(dateKey) {
+  const cache = readJSON(PUZZLES_FILE);
+  if (cache[dateKey]) {
+    delete cache[dateKey];
+    writeJSON(PUZZLES_FILE, cache);
+  }
 }
 
 // --- Middleware ---
@@ -255,6 +275,42 @@ app.post('/api/admin/preview', requireAdmin, (req, res) => {
 app.get('/api/archive', (req, res) => {
   const cache = readJSON(PUZZLES_FILE);
   res.json({ dates: Object.keys(cache).sort(), today: todayKey() });
+});
+
+// --- Admin scheduling: pick exactly which clues appear on a future date ---
+app.get('/api/admin/schedules', requireAdmin, (req, res) => {
+  const schedules = readJSON(SCHEDULES_FILE);
+  res.json({ schedules, today: todayKey() });
+});
+
+app.put('/api/admin/schedule/:date', requireAdmin, (req, res) => {
+  const date = req.params.date;
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) return res.status(400).json({ error: 'bad date' });
+  if (date <= todayKey()) return res.status(400).json({ error: 'date must be in the future' });
+  const { clueIds } = req.body || {};
+  if (!Array.isArray(clueIds) || clueIds.length === 0) {
+    return res.status(400).json({ error: 'clueIds array required' });
+  }
+  const bank = readJSON(CLUES_FILE);
+  const known = new Set(bank.map((c) => c.id));
+  const filtered = clueIds.filter((id) => known.has(id));
+  if (filtered.length === 0) return res.status(400).json({ error: 'no valid clueIds' });
+  const schedules = readJSON(SCHEDULES_FILE);
+  schedules[date] = filtered;
+  writeJSON(SCHEDULES_FILE, schedules);
+  clearCachedPuzzle(date);
+  res.json({ ok: true, date, count: filtered.length });
+});
+
+app.delete('/api/admin/schedule/:date', requireAdmin, (req, res) => {
+  const date = req.params.date;
+  const schedules = readJSON(SCHEDULES_FILE);
+  if (schedules[date]) {
+    delete schedules[date];
+    writeJSON(SCHEDULES_FILE, schedules);
+    if (date > todayKey()) clearCachedPuzzle(date);
+  }
+  res.json({ ok: true });
 });
 
 app.listen(PORT, () => {

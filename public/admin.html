@@ -93,6 +93,29 @@
         <ul id="bankList" class="bank-list"></ul>
         <p class="muted">Po każdej zmianie banku jutrzejsza krzyżówka zostanie wylosowana ponownie. Dzisiejsza i przeszłe pozostają nietknięte.</p>
       </section>
+
+      <section class="panel" id="schedulerPanel" hidden>
+        <h2>Plan wydań</h2>
+        <p class="muted">Wybierz dokładny zestaw haseł na konkretny dzień w przyszłości. Bez planu — losowanie deterministyczne według daty.</p>
+        <div class="field">
+          <label>Data wydania (w przyszłości)</label>
+          <input type="date" id="scheduleDate" />
+        </div>
+        <div class="field">
+          <label>Hasła w tym dniu <span id="schedulePickCount" class="muted">· 0 wybranych</span></label>
+          <input id="scheduleSearch" type="search" placeholder="Szukaj w banku…" />
+          <ul id="schedulePicker" class="schedule-picker"></ul>
+        </div>
+        <div class="actions">
+          <button class="primary" type="button" id="saveSchedule">Zapisz plan</button>
+          <button class="ghost" type="button" id="clearScheduleForm">Wyczyść wybór</button>
+        </div>
+        <p id="scheduleError" class="error" hidden></p>
+        <p id="scheduleOk" class="ok" hidden></p>
+
+        <h3 class="sched-subhead">Zaplanowane wydania</h3>
+        <ul id="scheduleList" class="schedule-list"></ul>
+      </section>
     </main>
 
     <footer class="colophon">

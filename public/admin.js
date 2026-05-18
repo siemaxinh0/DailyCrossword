@@ -6,6 +6,9 @@ const $$ = (s) => Array.from(document.querySelectorAll(s));
 let token = localStorage.getItem('dk:adminToken') || null;
 let bank = [];
 let pendingMediaUrl = '';
+let schedulePicks = new Set();
+let schedules = {};
+let serverToday = '';
 
 function show(id, on = true) { $(id).hidden = !on; }
 function setError(id, msg) {
@@ -30,18 +33,39 @@ function showLogin() {
   show('#loginPanel', true);
   show('#composerPanel', false);
   show('#bankPanel', false);
+  show('#schedulerPanel', false);
 }
 function showAdmin() {
   show('#loginPanel', false);
   show('#composerPanel', true);
   show('#bankPanel', true);
-  loadBank();
+  show('#schedulerPanel', true);
+  loadBank().then(loadSchedules);
 }
 
 async function loadBank() {
   const r = await api('/api/admin/clues');
   bank = await r.json();
   renderBank();
+  renderSchedulePicker();
+}
+
+async function loadSchedules() {
+  const r = await api('/api/admin/schedules');
+  const data = await r.json();
+  schedules = data.schedules || {};
+  serverToday = data.today || '';
+  const dateInput = document.getElementById('scheduleDate');
+  if (dateInput && !dateInput.min) {
+    // min = tomorrow
+    const t = new Date(serverToday + 'T00:00:00');
+    t.setDate(t.getDate() + 1);
+    const y = t.getFullYear();
+    const m = String(t.getMonth() + 1).padStart(2, '0');
+    const d = String(t.getDate()).padStart(2, '0');
+    dateInput.min = `${y}-${m}-${d}`;
+  }
+  renderScheduleList();
 }
 
 function renderBank() {
@@ -68,6 +92,80 @@ function renderBank() {
     if (!confirm('Usunąć to hasło z banku?')) return;
     await api(`/api/admin/clues/${b.dataset.id}`, { method: 'DELETE' });
     loadBank();
+  }));
+}
+
+function renderSchedulePicker() {
+  const ul = document.getElementById('schedulePicker');
+  if (!ul) return;
+  const q = (document.getElementById('scheduleSearch').value || '').toLowerCase();
+  const items = bank.filter((c) =>
+    !q || c.clue.toLowerCase().includes(q) || c.answer.toLowerCase().includes(q)
+  );
+  ul.innerHTML = '';
+  for (const c of items) {
+    const li = document.createElement('li');
+    const checked = schedulePicks.has(c.id) ? 'checked' : '';
+    const typeLabel = { text: 'tekst', image: 'obraz', audio: 'dźwięk' }[c.type] || 'tekst';
+    li.innerHTML = `
+      <label>
+        <input type="checkbox" data-id="${c.id}" ${checked} />
+        <span class="tag">${typeLabel}</span>
+        <strong class="ans">${escapeHtml(c.answer)}</strong>
+        <span class="muted">— ${escapeHtml(c.clue)}</span>
+      </label>`;
+    ul.appendChild(li);
+  }
+  ul.querySelectorAll('input[type="checkbox"]').forEach((cb) => {
+    cb.addEventListener('change', () => {
+      if (cb.checked) schedulePicks.add(cb.dataset.id); else schedulePicks.delete(cb.dataset.id);
+      document.getElementById('schedulePickCount').textContent = `· ${schedulePicks.size} wybranych`;
+    });
+  });
+  document.getElementById('schedulePickCount').textContent = `· ${schedulePicks.size} wybranych`;
+}
+
+function renderScheduleList() {
+  const ul = document.getElementById('scheduleList');
+  if (!ul) return;
+  ul.innerHTML = '';
+  const keys = Object.keys(schedules).sort();
+  if (keys.length === 0) {
+    ul.innerHTML = '<li class="muted">Brak zaplanowanych wydań.</li>';
+    return;
+  }
+  const byId = new Map(bank.map((c) => [c.id, c]));
+  for (const date of keys) {
+    const ids = schedules[date] || [];
+    const li = document.createElement('li');
+    const previews = ids
+      .map((id) => byId.get(id))
+      .filter(Boolean)
+      .map((c) => escapeHtml(c.answer))
+      .slice(0, 6)
+      .join(', ');
+    const more = ids.length > 6 ? `, +${ids.length - 6}` : '';
+    const isPast = serverToday && date <= serverToday;
+    li.innerHTML = `
+      <div class="sched-date">${date}${isPast ? ' <span class="muted">(minęła)</span>' : ''}</div>
+      <div class="sched-preview">${ids.length} hasła: <span class="muted">${previews}${more}</span></div>
+      <div class="sched-actions">
+        <button class="ghost" type="button" data-edit="${date}">edytuj</button>
+        <button class="del" type="button" data-del="${date}">usuń</button>
+      </div>`;
+    ul.appendChild(li);
+  }
+  ul.querySelectorAll('button[data-edit]').forEach((b) => b.addEventListener('click', () => {
+    const date = b.dataset.edit;
+    document.getElementById('scheduleDate').value = date;
+    schedulePicks = new Set(schedules[date] || []);
+    renderSchedulePicker();
+    window.scrollTo({ top: document.getElementById('schedulerPanel').offsetTop - 20, behavior: 'smooth' });
+  }));
+  ul.querySelectorAll('button[data-del]').forEach((b) => b.addEventListener('click', async () => {
+    if (!confirm(`Usunąć plan na ${b.dataset.del}?`)) return;
+    await api(`/api/admin/schedule/${b.dataset.del}`, { method: 'DELETE' });
+    loadSchedules();
   }));
 }
 
@@ -171,4 +269,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
   $('#bankSearch').addEventListener('input', renderBank);
   $('#bankType').addEventListener('change', renderBank);
+
+  // Scheduler
+  $('#scheduleSearch').addEventListener('input', renderSchedulePicker);
+  $('#clearScheduleForm').addEventListener('click', () => {
+    schedulePicks = new Set();
+    document.getElementById('scheduleDate').value = '';
+    setError('#scheduleError',''); setError('#scheduleOk','');
+    renderSchedulePicker();
+  });
+  $('#saveSchedule').addEventListener('click', async () => {
+    setError('#scheduleError',''); setError('#scheduleOk','');
+    const date = document.getElementById('scheduleDate').value;
+    if (!date) { setError('#scheduleError','Wybierz datę.'); return; }
+    if (schedulePicks.size === 0) { setError('#scheduleError','Zaznacz przynajmniej jedno hasło.'); return; }
+    const r = await api(`/api/admin/schedule/${date}`, {
+      method: 'PUT', headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ clueIds: Array.from(schedulePicks) }),
+    });
+    if (!r.ok) {
+      const data = await r.json().catch(() => ({}));
+      setError('#scheduleError', data.error || 'Nie udało się zapisać planu.');
+      return;
+    }
+    setError('#scheduleOk', `Plan na ${date} zapisany.`);
+    loadSchedules();
+  });
 });

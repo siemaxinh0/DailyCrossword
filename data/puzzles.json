@@ -453,16 +453,117 @@
   "2026-05-18": {
     "date": "2026-05-18",
     "size": {
-      "rows": 9,
-      "cols": 8
+      "rows": 13,
+      "cols": 15
     },
     "cells": [
       [
         null,
         null,
+        null,
+        null,
         {
-          "letter": "P",
+          "letter": "E",
           "number": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "V"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "R"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "M",
+          "number": 2
+        },
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        {
+          "letter": "T",
+          "number": 3
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "W",
+          "number": 4
         },
         {
           "letter": "A"
@@ -471,52 +572,21 @@
           "letter": "R"
         },
         {
-          "letter": "Y"
+          "letter": "S"
         },
         {
           "letter": "Z"
         },
-        null
-      ],
-      [
-        null,
-        null,
         {
-          "letter": "Y"
-        },
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        {
-          "letter": "T",
-          "number": 2
+          "letter": "A"
         },
         {
-          "letter": "O"
+          "letter": "W"
         },
         {
-          "letter": "K"
+          "letter": "A"
         },
-        {
-          "letter": "I"
-        },
-        {
-          "letter": "O"
-        },
-        null
-      ],
-      [
         null,
-        null,
-        {
-          "letter": "H"
-        },
         null,
         null,
         null,
@@ -527,79 +597,188 @@
         null,
         null,
         {
-          "letter": "O"
+          "letter": "T"
         },
-        null,
-        null,
         null,
         {
-          "letter": "N",
-          "number": 3
+          "letter": "T"
         },
+        null,
+        {
+          "letter": "R"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
         null
       ],
       [
+        null,
+        null,
         {
-          "letter": "E",
-          "number": 4
+          "letter": "E"
         },
+        null,
+        null,
+        null,
         {
-          "letter": "I"
+          "letter": "A"
         },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "J"
+        },
+        null,
+        null,
+        null,
         {
           "letter": "N"
         },
-        {
-          "letter": "S"
-        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
         {
           "letter": "T",
           "number": 5
         },
         {
-          "letter": "E"
+          "letter": "O"
+        },
+        {
+          "letter": "K"
         },
         {
           "letter": "I"
         },
         {
-          "letter": "N"
-        }
+          "letter": "O"
+        },
+        null,
+        {
+          "letter": "T"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       [
-        null,
-        null,
-        null,
-        null,
         {
           "letter": "U"
         },
         null,
         {
-          "letter": "L"
+          "letter": "O"
         },
-        null
+        null,
+        null,
+        {
+          "letter": "M",
+          "number": 6
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "C"
+        },
+        {
+          "letter": "K"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "W"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "C"
+        },
+        {
+          "letter": "Z"
+        }
       ],
       [
-        null,
-        null,
-        null,
-        null,
         {
           "letter": "S"
         },
         null,
         null,
-        null
-      ],
-      [
-        null,
         null,
         null,
         null,
         {
+          "letter": "N"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
           "letter": "K"
         },
+        null,
+        {
+          "letter": "P",
+          "number": 7
+        },
+        {
+          "letter": "Y"
+        },
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "H"
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "N"
+        },
+        null,
+        null,
+        null,
+        null,
         null,
         null,
         null
@@ -607,30 +786,56 @@
     ],
     "placements": [
       {
-        "id": "s07",
-        "answer": "PARYZ",
-        "answerDisplay": "PARYZ",
-        "clue": "Stolica Francji",
+        "id": "s02",
+        "answer": "EVEREST",
+        "answerDisplay": "EVEREST",
+        "clue": "Najwyższy szczyt świata",
         "type": "text",
         "media": null,
         "row": 0,
-        "col": 2,
-        "dir": "across",
-        "length": 5,
+        "col": 4,
+        "dir": "down",
+        "length": 7,
         "number": 1
       },
       {
-        "id": "s10",
-        "answer": "PYTHON",
-        "answerDisplay": "PYTHON",
-        "clue": "Język programowania nazwany od węża",
+        "id": "s15",
+        "answer": "MATEJKO",
+        "answerDisplay": "MATEJKO",
+        "clue": "Polski malarz batalista, autor 'Bitwy pod Grunwaldem'",
         "type": "text",
         "media": null,
-        "row": 0,
+        "row": 4,
         "col": 2,
         "dir": "down",
-        "length": 6,
-        "number": 1
+        "length": 7,
+        "number": 2
+      },
+      {
+        "id": "s11",
+        "answer": "TARANTINO",
+        "answerDisplay": "TARANTINO",
+        "clue": "Reżyser 'Pulp Fiction'",
+        "type": "text",
+        "media": null,
+        "row": 4,
+        "col": 6,
+        "dir": "down",
+        "length": 9,
+        "number": 3
+      },
+      {
+        "id": "s01",
+        "answer": "WARSZAWA",
+        "answerDisplay": "WARSZAWA",
+        "clue": "Stolica Polski",
+        "type": "text",
+        "media": null,
+        "row": 5,
+        "col": 1,
+        "dir": "across",
+        "length": 8,
+        "number": 4
       },
       {
         "id": "s13",
@@ -639,58 +844,52 @@
         "clue": "Stolica Japonii",
         "type": "text",
         "media": null,
-        "row": 2,
-        "col": 2,
-        "dir": "across",
-        "length": 5,
-        "number": 2
-      },
-      {
-        "id": "s09",
-        "answer": "NIL",
-        "answerDisplay": "NIL",
-        "clue": "Najdłuższa rzeka świata",
-        "type": "text",
-        "media": null,
-        "row": 4,
-        "col": 6,
-        "dir": "down",
-        "length": 3,
-        "number": 3
-      },
-      {
-        "id": "s14",
-        "answer": "EINSTEIN",
-        "answerDisplay": "EINSTEIN",
-        "clue": "Twórca teorii względności",
-        "type": "text",
-        "media": null,
-        "row": 5,
+        "row": 9,
         "col": 0,
         "dir": "across",
-        "length": 8,
-        "number": 4
+        "length": 5,
+        "number": 5
       },
       {
-        "id": "f21368d7d4ad",
+        "id": "68aa28e3caa0",
         "answer": "TUSK",
         "answerDisplay": "TUSK",
-        "clue": "Podaj nazwisko złodzieja widocznego na zdjęciu.",
-        "type": "text",
-        "media": "/uploads/5c58a1a1eaceb7af.jpg",
-        "row": 5,
-        "col": 4,
+        "clue": "Podaj nazwisko tego zbrodniarza",
+        "type": "image",
+        "media": "/uploads/eb6354cff262553e.jpg",
+        "row": 9,
+        "col": 0,
         "dir": "down",
         "length": 4,
         "number": 5
+      },
+      {
+        "id": "s04",
+        "answer": "MICKIEWICZ",
+        "answerDisplay": "MICKIEWICZ",
+        "clue": "Autor 'Pana Tadeusza'",
+        "type": "text",
+        "media": null,
+        "row": 10,
+        "col": 5,
+        "dir": "across",
+        "length": 10,
+        "number": 6
+      },
+      {
+        "id": "s10",
+        "answer": "PYTHON",
+        "answerDisplay": "PYTHON",
+        "clue": "Język programowania nazwany od węża",
+        "type": "text",
+        "media": null,
+        "row": 12,
+        "col": 2,
+        "dir": "across",
+        "length": 6,
+        "number": 7
       }
     ],
-    "unplaced": [
-      {
-        "id": "s08",
-        "answer": "JABLKO",
-        "clue": "Owoc, który spadł na Newtona"
-      }
-    ]
+    "unplaced": []
   }
 }
