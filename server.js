@@ -61,12 +61,19 @@ function readPuzzles() {
 }
 
 // --- Deterministic daily selection ---
+// Zawsze liczymy „dziś" w strefie Europe/Warsaw, niezależnie od TZ procesu
+// (na Vercelu kontener chodzi w UTC, co rozjeżdżało się z lokalną datą
+// w przeglądarce użytkownika i powodowało błąd „future" tuż po północy).
+const DATE_TZ = process.env.DATE_TZ || 'Europe/Warsaw';
+const _dateFmt = new Intl.DateTimeFormat('en-CA', {
+  timeZone: DATE_TZ,
+  year: 'numeric',
+  month: '2-digit',
+  day: '2-digit',
+});
 function todayKey(d = new Date()) {
-  // Use local date.
-  const y = d.getFullYear();
-  const m = String(d.getMonth() + 1).padStart(2, '0');
-  const day = String(d.getDate()).padStart(2, '0');
-  return `${y}-${m}-${day}`;
+  // en-CA daje format YYYY-MM-DD.
+  return _dateFmt.format(d);
 }
 
 function seededShuffle(arr, seed) {

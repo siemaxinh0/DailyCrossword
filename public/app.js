@@ -27,9 +27,13 @@ function issueNumber(date) {
   const diff = Math.floor((d - EPOCH) / 86400000) + 1;
   return diff > 0 ? diff : 1;
 }
+const _tzDateFmt = new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Europe/Warsaw',
+  year: 'numeric', month: '2-digit', day: '2-digit',
+});
 function todayKey() {
-  const d = new Date();
-  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`;
+  // Zawsze data warszawska — niezależnie od TZ przeglądarki.
+  return _tzDateFmt.format(new Date());
 }
 
 function storeKey(date) { return `dk:answers:${date}`; }

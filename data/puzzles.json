@@ -374,5 +374,399 @@
         "clue": "Stolica Francji"
       }
     ]
+  },
+  "2026-05-19": {
+    "date": "2026-05-19",
+    "size": {
+      "rows": 10,
+      "cols": 15
+    },
+    "cells": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "K",
+          "number": 1
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "M",
+          "number": 2
+        }
+      ],
+      [
+        {
+          "letter": "K",
+          "number": 3
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "R"
+        },
+        {
+          "letter": "S"
+        },
+        {
+          "letter": "K"
+        },
+        {
+          "letter": "I",
+          "number": 4
+        },
+        null,
+        {
+          "letter": "M",
+          "number": 5
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "L"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "W"
+        },
+        {
+          "letter": "I"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "G"
+        },
+        null,
+        null,
+        {
+          "letter": "N"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "L"
+        }
+      ],
+      [
+        null,
+        {
+          "letter": "O",
+          "number": 6
+        },
+        {
+          "letter": "G"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "N"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "S"
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "N"
+        },
+        null,
+        {
+          "letter": "A"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "A"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        null,
+        {
+          "letter": "D"
+        },
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "E",
+          "number": 7
+        },
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "P"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "A"
+        },
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "M"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "S"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "K"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "B",
+          "number": 8
+        },
+        {
+          "letter": "R"
+        },
+        {
+          "letter": "U"
+        },
+        {
+          "letter": "N"
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "M"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "R"
+        },
+        {
+          "letter": "S"
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "placements": [
+      {
+        "id": "22f3d67cd505",
+        "answer": "KANADA",
+        "answerDisplay": "KANADA",
+        "clue": "Drugi największy kraj pod względem powierzchni.",
+        "type": "text",
+        "media": null,
+        "row": 0,
+        "col": 10,
+        "dir": "down",
+        "length": 6,
+        "number": 1
+      },
+      {
+        "id": "78e2f75bdb5c",
+        "answer": "MILA",
+        "answerDisplay": "MILA",
+        "clue": "Nazwisko piłkarza który strzelił drugiego gola w meczu Polska-Niemcy 2:0",
+        "type": "text",
+        "media": null,
+        "row": 0,
+        "col": 14,
+        "dir": "down",
+        "length": 4,
+        "number": 2
+      },
+      {
+        "id": "dd6a3e065ece",
+        "answer": "KOTERSKI",
+        "answerDisplay": "KOTERSKI",
+        "clue": "Nazwisko reżysera \"Dnia świra\".",
+        "type": "text",
+        "media": null,
+        "row": 1,
+        "col": 0,
+        "dir": "across",
+        "length": 8,
+        "number": 3
+      },
+      {
+        "id": "6635f986e218",
+        "answer": "IGOLOMSKA",
+        "answerDisplay": "IGOŁOMSKA",
+        "clue": "Najdłuższa ulica w Krakowie.",
+        "type": "text",
+        "media": null,
+        "row": 1,
+        "col": 7,
+        "dir": "down",
+        "length": 9,
+        "number": 4
+      },
+      {
+        "id": "710520dcd210",
+        "answer": "MALAWI",
+        "answerDisplay": "MALAWI",
+        "clue": "Jakiego kraju jest to flaga?",
+        "type": "image",
+        "media": "/uploads/b53997fdb70749fa.png",
+        "row": 1,
+        "col": 9,
+        "dir": "across",
+        "length": 6,
+        "number": 5
+      },
+      {
+        "id": "b924fbd9664c",
+        "answer": "OGANESON",
+        "answerDisplay": "OGANESON",
+        "clue": "Najnowszy odkryty pierwiastek chemiczny.",
+        "type": "text",
+        "media": null,
+        "row": 3,
+        "col": 1,
+        "dir": "across",
+        "length": 8,
+        "number": 6
+      },
+      {
+        "id": "c61216532484",
+        "answer": "ETIOPIA",
+        "answerDisplay": "ETIOPIA",
+        "clue": "Kraj pochodzenia The Weeknda.",
+        "type": "text",
+        "media": null,
+        "row": 5,
+        "col": 4,
+        "dir": "across",
+        "length": 7,
+        "number": 7
+      },
+      {
+        "id": "be32c25962eb",
+        "answer": "BRUNOMARS",
+        "answerDisplay": "BRUNOMARS",
+        "clue": "Artysta z największą liczbą słuchaczy na Spotify (stan na 19.05.2026)",
+        "type": "text",
+        "media": null,
+        "row": 9,
+        "col": 1,
+        "dir": "across",
+        "length": 9,
+        "number": 8
+      }
+    ],
+    "unplaced": []
   }
 }
