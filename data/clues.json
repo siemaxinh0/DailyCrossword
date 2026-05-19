@@ -182,5 +182,69 @@
     "type": "text",
     "media": null,
     "createdAt": 1779134740877
+  },
+  {
+    "id": "66e5b6b55132",
+    "clue": "Raper, autor utworów 'Fendi' i 'Gumki Recepturki'.",
+    "answer": "HELLFIELD",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779185782487
+  },
+  {
+    "id": "123ce9dc2d35",
+    "clue": "Najwyższy szczyt Słowacji i Tatr.",
+    "answer": "GERLACH",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779185851392
+  },
+  {
+    "id": "8940d301930f",
+    "clue": "Język urzędowy w Brazylii.",
+    "answer": "PORTUGALSKI",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779185890162
+  },
+  {
+    "id": "5ad186f25cc7",
+    "clue": "Jedyne polskie województwo które graniczy z trzema państwami (Rosją, Litwą i Białorusią).",
+    "answer": "PODLASKIE",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779185941320
+  },
+  {
+    "id": "492ac44e22e4",
+    "clue": "Król strzelców EURO 2016.",
+    "answer": "GRIEZMANN",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779185973222
+  },
+  {
+    "id": "8c52244b7dab",
+    "clue": "Ciekły metal ze starego termometru",
+    "answer": "RTĘĆ",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779186238501
+  },
+  {
+    "id": "b20e8fe6b943",
+    "clue": "Miasto Batmana",
+    "answer": "GOTHAM",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779186366668
+  },
+  {
+    "id": "30f715d48f8d",
+    "clue": "Legendarny wokalista Dżemu",
+    "answer": "RIEDEL",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779186560832
   }
 ]
