@@ -110,7 +110,12 @@ function render() {
         inp.autocomplete = 'off'; inp.spellcheck = false;
         inp.addEventListener('input', onCellInput);
         inp.addEventListener('keydown', onCellKey);
-        inp.addEventListener('focus', () => setActiveFromCell(r, c));
+        inp.addEventListener('focus', () => {
+          setActiveFromCell(r, c);
+          // Zaznacz zawartość, by wpisanie litery nadpisało istniejącą
+          // (inaczej maxLength=1 blokuje wpisanie i kursor utyka).
+          try { inp.select(); } catch {}
+        });
         div.appendChild(inp);
         div.addEventListener('click', () => {
           if (document.activeElement === inp) toggleDirection(r, c);
@@ -282,6 +287,15 @@ function onCellKey(e) {
     moveCursor(r, c, -1, true);
     return;
   }
+  // Jeśli pole ma już tę samą literę, którą wpisujemy — przeglądarka nie
+  // wyemituje 'input' (wartość się nie zmienia). Ręcznie idziemy dalej.
+  if (e.key.length === 1 && /^[a-z0-9ąćęłńóśźż]$/i.test(e.key)) {
+    if (inp.value && inp.value.toUpperCase() === e.key.toUpperCase()) {
+      e.preventDefault();
+      advanceToNextEmpty(r, c, +1);
+      return;
+    }
+  }
   if (e.key === 'ArrowRight') { e.preventDefault(); setDirAndMove(r, c, 'across', +1); }
   else if (e.key === 'ArrowLeft') { e.preventDefault(); setDirAndMove(r, c, 'across', -1); }
   else if (e.key === 'ArrowDown') { e.preventDefault(); setDirAndMove(r, c, 'down', +1); }
@@ -317,23 +331,19 @@ function moveCursor(r, c, delta, eraseOnBack = false, forceDir) {
   }
 }
 
-// Po wpisaniu litery: skacz do następnej PUSTEJ komórki w obrębie aktywnego hasła,
-// pomijając pola już wypełnione (np. przez nakładające się słowo).
+// Po wpisaniu litery: przesuń się o JEDNO pole w obrębie aktywnego hasła.
+// Nie pomijamy pól wypełnionych z krzyżującego się hasła — użytkownik może
+// je potwierdzić (np. wpisać tę samą literę „A”) i naturalnie iść dalej.
 function advanceToNextEmpty(r, c, delta) {
   const p = state.activeEntry;
   if (!p) { moveCursor(r, c, delta); return; }
-  // Pozycja w obrębie hasła.
-  let i = p.dir === 'across' ? (c - p.col) : (r - p.row);
-  let next = i + delta;
-  while (next >= 0 && next < p.length) {
-    const nr = p.row + (p.dir === 'down' ? next : 0);
-    const nc = p.col + (p.dir === 'across' ? next : 0);
-    const input = document.querySelector(`.cell[data-r="${nr}"][data-c="${nc}"] input`);
-    if (input && !input.value) { input.focus(); return; }
-    next += delta;
-  }
-  // Brak pustych pól w tym haśle — przesuń o jedno (zachowanie zachowawcze).
-  moveCursor(r, c, delta);
+  const i = p.dir === 'across' ? (c - p.col) : (r - p.row);
+  const next = i + delta;
+  if (next < 0 || next >= p.length) return;
+  const nr = p.row + (p.dir === 'down' ? next : 0);
+  const nc = p.col + (p.dir === 'across' ? next : 0);
+  const input = document.querySelector(`.cell[data-r="${nr}"][data-c="${nc}"] input`);
+  if (input) input.focus();
 }
 
 function nextEntry(delta) {
