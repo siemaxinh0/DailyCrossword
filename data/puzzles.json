@@ -768,5 +768,404 @@
       }
     ],
     "unplaced": []
+  },
+  "2026-05-20": {
+    "date": "2026-05-20",
+    "size": {
+      "rows": 12,
+      "cols": 12
+    },
+    "cells": [
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "G",
+          "number": 1
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "H"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "M"
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "R",
+          "number": 2
+        },
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "I"
+        },
+        null,
+        {
+          "letter": "R"
+        },
+        null,
+        null,
+        {
+          "letter": "G",
+          "number": 3
+        },
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        null,
+        {
+          "letter": "R"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "H",
+          "number": 4
+        }
+      ],
+      [
+        {
+          "letter": "P",
+          "number": 5
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "D"
+        },
+        {
+          "letter": "L"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "S"
+        },
+        {
+          "letter": "K"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        {
+          "letter": "E"
+        }
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        {
+          "letter": "C"
+        },
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "L"
+        }
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        {
+          "letter": "H"
+        },
+        null,
+        null,
+        {
+          "letter": "Z"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "L"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "M"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "F"
+        }
+      ],
+      [
+        null,
+        {
+          "letter": "P",
+          "number": 6
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "R",
+          "number": 7
+        },
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "U"
+        },
+        {
+          "letter": "G"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "L"
+        },
+        {
+          "letter": "S"
+        },
+        {
+          "letter": "K"
+        },
+        {
+          "letter": "I"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "letter": "T"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "N"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "E"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "N"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "L"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "letter": "C"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "D"
+        }
+      ]
+    ],
+    "placements": [
+      {
+        "id": "b20e8fe6b943",
+        "answer": "GOTHAM",
+        "answerDisplay": "GOTHAM",
+        "clue": "Miasto Batmana",
+        "type": "text",
+        "media": null,
+        "row": 0,
+        "col": 4,
+        "dir": "across",
+        "length": 6,
+        "number": 1
+      },
+      {
+        "id": "123ce9dc2d35",
+        "answer": "GERLACH",
+        "answerDisplay": "GERLACH",
+        "clue": "Najwyższy szczyt Słowacji i Tatr.",
+        "type": "text",
+        "media": null,
+        "row": 0,
+        "col": 4,
+        "dir": "down",
+        "length": 7,
+        "number": 1
+      },
+      {
+        "id": "30f715d48f8d",
+        "answer": "RIEDEL",
+        "answerDisplay": "RIEDEL",
+        "clue": "Legendarny wokalista Dżemu",
+        "type": "text",
+        "media": null,
+        "row": 1,
+        "col": 2,
+        "dir": "down",
+        "length": 6,
+        "number": 2
+      },
+      {
+        "id": "492ac44e22e4",
+        "answer": "GRIEZMANN",
+        "answerDisplay": "GRIEZMANN",
+        "clue": "Król strzelców EURO 2016.",
+        "type": "text",
+        "media": null,
+        "row": 2,
+        "col": 7,
+        "dir": "down",
+        "length": 9,
+        "number": 3
+      },
+      {
+        "id": "66e5b6b55132",
+        "answer": "HELLFIELD",
+        "answerDisplay": "HELLFIELD",
+        "clue": "Raper, autor utworów 'Fendi' i 'Gumki Recepturki'.",
+        "type": "text",
+        "media": null,
+        "row": 3,
+        "col": 11,
+        "dir": "down",
+        "length": 9,
+        "number": 4
+      },
+      {
+        "id": "5ad186f25cc7",
+        "answer": "PODLASKIE",
+        "answerDisplay": "PODLASKIE",
+        "clue": "Jedyne polskie województwo które graniczy z trzema państwami (Rosją, Litwą i Białorusią).",
+        "type": "text",
+        "media": null,
+        "row": 4,
+        "col": 0,
+        "dir": "across",
+        "length": 9,
+        "number": 5
+      },
+      {
+        "id": "8940d301930f",
+        "answer": "PORTUGALSKI",
+        "answerDisplay": "PORTUGALSKI",
+        "clue": "Język urzędowy w Brazylii.",
+        "type": "text",
+        "media": null,
+        "row": 8,
+        "col": 1,
+        "dir": "across",
+        "length": 11,
+        "number": 6
+      },
+      {
+        "id": "8c52244b7dab",
+        "answer": "RTEC",
+        "answerDisplay": "RTĘĆ",
+        "clue": "Ciekły metal ze starego termometru",
+        "type": "text",
+        "media": null,
+        "row": 8,
+        "col": 3,
+        "dir": "down",
+        "length": 4,
+        "number": 7
+      }
+    ],
+    "unplaced": []
   }
 }

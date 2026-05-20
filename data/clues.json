@@ -246,5 +246,69 @@
     "type": "text",
     "media": null,
     "createdAt": 1779186560832
+  },
+  {
+    "id": "2edf1960b35c",
+    "clue": "Jednostka temperatury w układzie SI",
+    "answer": "KELWIN",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779278604858
+  },
+  {
+    "id": "48ab69562522",
+    "clue": "Miasto z Aston Villą",
+    "answer": "BIRMINGHAM",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779278631383
+  },
+  {
+    "id": "baadbadaf0af",
+    "clue": "Reżyser 'Lśnienia'",
+    "answer": "KUBRICK",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779278684594
+  },
+  {
+    "id": "86d55601e73d",
+    "clue": "Zdobywca Złotej Piłki za 2022",
+    "answer": "BENZEMA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779278768440
+  },
+  {
+    "id": "cdcd19e51377",
+    "clue": "Miasto Ojca Mateusza",
+    "answer": "SANDOMIERZ",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779278970765
+  },
+  {
+    "id": "2a354672886e",
+    "clue": "Nazwisko najbogatszego Polaka",
+    "answer": "SOŁOWOW",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779279005472
+  },
+  {
+    "id": "45fa914f0b8b",
+    "clue": "Jego imię nosi AGH",
+    "answer": "STASZIC",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779279026389
+  },
+  {
+    "id": "44acec91ecb9",
+    "clue": "Najpopularniejsza piosenka Maty (stan na 21.05.2026)",
+    "answer": "KISSCAM",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779279211303
   }
 ]
