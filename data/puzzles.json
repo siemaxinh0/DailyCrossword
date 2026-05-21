@@ -1167,5 +1167,835 @@
       }
     ],
     "unplaced": []
+  },
+  "2026-05-25": {
+    "date": "2026-05-25",
+    "size": {
+      "rows": 13,
+      "cols": 14
+    },
+    "cells": [
+      [
+        {
+          "letter": "D",
+          "number": 1
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "N",
+          "number": 2
+        },
+        {
+          "letter": "C"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "C"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "U"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "G"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "G"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "W",
+          "number": 3
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "T",
+          "number": 4
+        },
+        {
+          "letter": "R"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "G"
+        },
+        {
+          "letter": "L"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "V"
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "S"
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "R",
+          "number": 5
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "N"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "L"
+        },
+        {
+          "letter": "D"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "N"
+        },
+        {
+          "letter": "H"
+        },
+        {
+          "letter": "O"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        {
+          "letter": "S"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        {
+          "letter": "S",
+          "number": 6
+        },
+        {
+          "letter": "Z"
+        },
+        {
+          "letter": "N"
+        },
+        {
+          "letter": "U"
+        },
+        {
+          "letter": "K"
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "I"
+        },
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "G"
+        },
+        null,
+        null,
+        {
+          "letter": "K"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "A"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "placements": [
+      {
+        "id": "618e9e8b81bd",
+        "answer": "DONCIC",
+        "answerDisplay": "DONCIĆ",
+        "clue": "Najlepszy słoweński koszykarz",
+        "type": "text",
+        "media": null,
+        "row": 0,
+        "col": 0,
+        "dir": "across",
+        "length": 6,
+        "number": 1
+      },
+      {
+        "id": "ab3f0eb4a595",
+        "answer": "NUGGETS",
+        "answerDisplay": "NUGGETS",
+        "clue": "Koszykarze z Denver albo pozycja w McDonald's",
+        "type": "text",
+        "media": null,
+        "row": 0,
+        "col": 2,
+        "dir": "down",
+        "length": 7,
+        "number": 2
+      },
+      {
+        "id": "3320d1895800",
+        "answer": "WALASZEK",
+        "answerDisplay": "WALASZEK",
+        "clue": "Ojciec 'Kapitana Bomby' i 'Egzorcysty'",
+        "type": "text",
+        "media": null,
+        "row": 4,
+        "col": 7,
+        "dir": "down",
+        "length": 8,
+        "number": 3
+      },
+      {
+        "id": "b35b9ef13aa3",
+        "answer": "TRIGLAV",
+        "answerDisplay": "TRIGLAV",
+        "clue": "Najwyższy szczyt Słowenii",
+        "type": "text",
+        "media": null,
+        "row": 5,
+        "col": 2,
+        "dir": "across",
+        "length": 7,
+        "number": 4
+      },
+      {
+        "id": "0510371dfbee",
+        "answer": "RONALDINHO",
+        "answerDisplay": "RONALDINHO",
+        "clue": "Gaucho, brazylijski magik",
+        "type": "text",
+        "media": null,
+        "row": 7,
+        "col": 4,
+        "dir": "across",
+        "length": 10,
+        "number": 5
+      },
+      {
+        "id": "33fbbe5f7692",
+        "answer": "RELIGA",
+        "answerDisplay": "RELIGA",
+        "clue": "Legendarny polski lekarz, jako pierwszy w Polsce zrobił udany przeszczep serca",
+        "type": "text",
+        "media": null,
+        "row": 7,
+        "col": 4,
+        "dir": "down",
+        "length": 6,
+        "number": 5
+      },
+      {
+        "id": "c308c5737201",
+        "answer": "SZNUK",
+        "answerDisplay": "SZNUK",
+        "clue": "Legendarny prowadzący 'Jeden z dziesięciu'",
+        "type": "text",
+        "media": null,
+        "row": 9,
+        "col": 6,
+        "dir": "across",
+        "length": 5,
+        "number": 6
+      }
+    ],
+    "unplaced": [
+      {
+        "id": "61dc230236e0",
+        "answer": "BULLY",
+        "clue": "Najnowszy album Kanyego Westa"
+      }
+    ]
+  },
+  "2026-05-22": {
+    "date": "2026-05-22",
+    "size": {
+      "rows": 11,
+      "cols": 15
+    },
+    "cells": [
+      [
+        null,
+        {
+          "letter": "A",
+          "number": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "M",
+          "number": 2
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "O"
+        },
+        null,
+        {
+          "letter": "G",
+          "number": 3
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "G",
+          "number": 4
+        },
+        {
+          "letter": "R"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "B",
+          "number": 5
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "W"
+        },
+        {
+          "letter": "S"
+        },
+        {
+          "letter": "K"
+        },
+        {
+          "letter": "I"
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "I"
+        },
+        null,
+        null,
+        {
+          "letter": "A"
+        },
+        null,
+        null,
+        {
+          "letter": "T"
+        },
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        null,
+        {
+          "letter": "R"
+        },
+        null,
+        null,
+        {
+          "letter": "O"
+        },
+        null,
+        {
+          "letter": "W"
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "R"
+        },
+        null,
+        null,
+        {
+          "letter": "C"
+        },
+        null,
+        null,
+        {
+          "letter": "W"
+        },
+        null,
+        {
+          "letter": "O"
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "letter": "Z",
+          "number": 6
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "M"
+        },
+        {
+          "letter": "M"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "R"
+        },
+        null,
+        {
+          "letter": "I"
+        },
+        null,
+        {
+          "letter": "N",
+          "number": 7
+        },
+        {
+          "letter": "V"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "D"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "A"
+        }
+      ],
+      [
+        null,
+        {
+          "letter": "A"
+        },
+        null,
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        null,
+        {
+          "letter": "A"
+        },
+        null,
+        {
+          "letter": "T"
+        },
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "O"
+        },
+        null,
+        null,
+        {
+          "letter": "K"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "N"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "letter": "S",
+          "number": 8
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "P"
+        },
+        {
+          "letter": "K"
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "W"
+        },
+        {
+          "letter": "S"
+        },
+        {
+          "letter": "K"
+        },
+        {
+          "letter": "I"
+        },
+        null,
+        null,
+        null
+      ]
+    ],
+    "placements": [
+      {
+        "id": "b26aef45f5e7",
+        "answer": "ALGIERIA",
+        "answerDisplay": "ALGIERIA",
+        "clue": "Największe (pod względem powierzchni) państwo w Afryce",
+        "type": "text",
+        "media": null,
+        "row": 0,
+        "col": 1,
+        "dir": "down",
+        "length": 8,
+        "number": 1
+      },
+      {
+        "id": "f55fc8700405",
+        "answer": "MOSTOWIAK",
+        "answerDisplay": "MOSTOWIAK",
+        "clue": "Marek, prekursor polskiego middle parta",
+        "type": "text",
+        "media": null,
+        "row": 0,
+        "col": 7,
+        "dir": "down",
+        "length": 9,
+        "number": 2
+      },
+      {
+        "id": "c6359c7bbdb1",
+        "answer": "GIEWONT",
+        "answerDisplay": "GIEWONT",
+        "clue": "Szczyt w Tatrach z 15-metrowym stalowym krzyżem",
+        "type": "text",
+        "media": null,
+        "row": 1,
+        "col": 9,
+        "dir": "down",
+        "length": 7,
+        "number": 3
+      },
+      {
+        "id": "1652107421a2",
+        "answer": "GRABOWSKI",
+        "answerDisplay": "GRABOWSKI",
+        "clue": "Aktor grający Ferdka w 'Świecie według Kiepskich'",
+        "type": "text",
+        "media": null,
+        "row": 2,
+        "col": 1,
+        "dir": "across",
+        "length": 9,
+        "number": 4
+      },
+      {
+        "id": "f2afbf165bde",
+        "answer": "BARCELONA",
+        "answerDisplay": "BARCELONA",
+        "clue": "Miasto Gaudiego",
+        "type": "text",
+        "media": null,
+        "row": 2,
+        "col": 4,
+        "dir": "down",
+        "length": 9,
+        "number": 5
+      },
+      {
+        "id": "d5f442e9657e",
+        "answer": "ZIMMER",
+        "answerDisplay": "ZIMMER",
+        "clue": "Hans i Kinny",
+        "type": "text",
+        "media": null,
+        "row": 6,
+        "col": 0,
+        "dir": "across",
+        "length": 6,
+        "number": 6
+      },
+      {
+        "id": "256b536575d3",
+        "answer": "NVIDIA",
+        "answerDisplay": "NVIDIA",
+        "clue": "Najbogatsza firma świata (stan na 22.05.2026)",
+        "type": "text",
+        "media": null,
+        "row": 6,
+        "col": 9,
+        "dir": "across",
+        "length": 6,
+        "number": 7
+      },
+      {
+        "id": "39971812670d",
+        "answer": "SAPKOWSKI",
+        "answerDisplay": "SAPKOWSKI",
+        "clue": "Twórca uniwersum 'Wiedźmina'",
+        "type": "text",
+        "media": null,
+        "row": 10,
+        "col": 3,
+        "dir": "across",
+        "length": 9,
+        "number": 8
+      }
+    ],
+    "unplaced": []
   }
 }

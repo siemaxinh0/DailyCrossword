@@ -310,5 +310,285 @@
     "type": "text",
     "media": null,
     "createdAt": 1779279211303
+  },
+  {
+    "id": "b5826508a4f0",
+    "clue": "Przełomowy hit Sanah z 2020 roku",
+    "answer": "SZAMPAN",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779365889365
+  },
+  {
+    "id": "60f5a34fe9bf",
+    "clue": "Ojciec Paczkomatów",
+    "answer": "BRZOSKA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779365897449
+  },
+  {
+    "id": "43ec55eb0aab",
+    "clue": "Wieś mieszkańców 'Rancza'",
+    "answer": "WILKOWYJE",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779365913493
+  },
+  {
+    "id": "8c7b98d48836",
+    "clue": "Miasto Beatlesów i klubu z Anfield",
+    "answer": "LIVERPOOL",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779365927837
+  },
+  {
+    "id": "5de9f5a2ac44",
+    "clue": "Słynny polski malarz, znany z mrocznych obrazów",
+    "answer": "BEKSIŃSKI",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779365957744
+  },
+  {
+    "id": "e75699b7efb0",
+    "clue": "Miasto Kanyego Westa i wielu Polaków",
+    "answer": "CHICAGO",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779365974666
+  },
+  {
+    "id": "586d4b4d424d",
+    "clue": "Legendarny bokser z numeru Żabsona",
+    "answer": "MAYWEATHER",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366136915
+  },
+  {
+    "id": "df2ac3457b10",
+    "clue": "Włoski klub Maradony",
+    "answer": "NAPOLI",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366159139
+  },
+  {
+    "id": "f55fc8700405",
+    "clue": "Marek, prekursor polskiego middle parta",
+    "answer": "MOSTOWIAK",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366189279
+  },
+  {
+    "id": "1652107421a2",
+    "clue": "Aktor grający Ferdka w 'Świecie według Kiepskich'",
+    "answer": "GRABOWSKI",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366205818
+  },
+  {
+    "id": "f2afbf165bde",
+    "clue": "Miasto Gaudiego",
+    "answer": "BARCELONA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366239065
+  },
+  {
+    "id": "39971812670d",
+    "clue": "Twórca uniwersum 'Wiedźmina'",
+    "answer": "SAPKOWSKI",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366281243
+  },
+  {
+    "id": "256b536575d3",
+    "clue": "Najbogatsza firma świata (stan na 22.05.2026)",
+    "answer": "NVIDIA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366315008
+  },
+  {
+    "id": "c6359c7bbdb1",
+    "clue": "Szczyt w Tatrach z 15-metrowym stalowym krzyżem",
+    "answer": "GIEWONT",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366332072
+  },
+  {
+    "id": "d5f442e9657e",
+    "clue": "Hans i Kinny",
+    "answer": "ZIMMER",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366351574
+  },
+  {
+    "id": "b26aef45f5e7",
+    "clue": "Największe (pod względem powierzchni) państwo w Afryce",
+    "answer": "ALGIERIA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366407114
+  },
+  {
+    "id": "6bea6b84a5f1",
+    "clue": "Gruby Pokemon",
+    "answer": "SNORLAX",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366517781
+  },
+  {
+    "id": "6341e38d1915",
+    "clue": "Japońska firma odpowiedzialna za stworzenie Mario",
+    "answer": "NINTENDO",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366537445
+  },
+  {
+    "id": "f7a1a54ae363",
+    "clue": "Najsłynniejszy premier Wielkiej Brytanii",
+    "answer": "CHURCHILL",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366556998
+  },
+  {
+    "id": "bd249c341c90",
+    "clue": "Wielki ssak albo piwo",
+    "answer": "ŻUBR",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366584079
+  },
+  {
+    "id": "779eaaf1a3a9",
+    "clue": "Drzewo o potężnym pniu występujące na sawannach",
+    "answer": "BAOBAB",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366599239
+  },
+  {
+    "id": "af0319c67c90",
+    "clue": "Najszybszy samolot w historii, wycofany z użytku",
+    "answer": "CONCORDE",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366615353
+  },
+  {
+    "id": "d0db8e931bb4",
+    "clue": "Legenda śpiewająca 'Dziwny jest ten świat'",
+    "answer": "NIEMEN",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366639888
+  },
+  {
+    "id": "86c963abc809",
+    "clue": "Imię Boczka ze 'Świata według Kiepskich'",
+    "answer": "ARNOLD",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366659965
+  },
+  {
+    "id": "33fbbe5f7692",
+    "clue": "Legendarny polski lekarz, jako pierwszy w Polsce zrobił udany przeszczep serca",
+    "answer": "RELIGA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366695257
+  },
+  {
+    "id": "b35b9ef13aa3",
+    "clue": "Najwyższy szczyt Słowenii",
+    "answer": "TRIGLAV",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366768085
+  },
+  {
+    "id": "c308c5737201",
+    "clue": "Legendarny prowadzący 'Jeden z dziesięciu'",
+    "answer": "SZNUK",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366789161
+  },
+  {
+    "id": "618e9e8b81bd",
+    "clue": "Najlepszy słoweński koszykarz",
+    "answer": "DONCIĆ",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366916558
+  },
+  {
+    "id": "0510371dfbee",
+    "clue": "Gaucho, brazylijski magik",
+    "answer": "RONALDINHO",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366961080
+  },
+  {
+    "id": "61dc230236e0",
+    "clue": "Najnowszy album Kanyego Westa",
+    "answer": "BULLY",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779366994537
+  },
+  {
+    "id": "ab3f0eb4a595",
+    "clue": "Koszykarze z Denver albo pozycja w McDonald's",
+    "answer": "NUGGETS",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779367092084
+  },
+  {
+    "id": "3320d1895800",
+    "clue": "Ojciec 'Kapitana Bomby' i 'Egzorcysty'",
+    "answer": "WALASZEK",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779367113134
+  },
+  {
+    "id": "7ca6118d2789",
+    "clue": "Tomasz, polski dziennikarz sportowy z baby face",
+    "answer": "ĆWIĄKAŁA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779367146700
+  },
+  {
+    "id": "5634c2a9c97c",
+    "clue": "Najsłynniejszy amerykański program kosmiczny",
+    "answer": "APOLLO",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779367166567
+  },
+  {
+    "id": "5c44833beb8f",
+    "clue": "Pierwszy pies w kosmosie",
+    "answer": "ŁAJKA",
+    "type": "text",
+    "media": null,
+    "createdAt": 1779367177014
   }
 ]

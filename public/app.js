@@ -1,4 +1,4 @@
-'use strict';
+n'use strict';
 
 const $ = (s, root = document) => root.querySelector(s);
 const $$ = (s, root = document) => Array.from(root.querySelectorAll(s));
