@@ -1997,5 +1997,511 @@
       }
     ],
     "unplaced": []
+  },
+  "2026-05-23": {
+    "date": "2026-05-23",
+    "size": {
+      "rows": 16,
+      "cols": 15
+    },
+    "cells": [
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "B",
+          "number": 1
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "R"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "Z"
+        },
+        null,
+        {
+          "letter": "W",
+          "number": 2
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "N",
+          "number": 3
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "P"
+        },
+        {
+          "letter": "O"
+        },
+        {
+          "letter": "L"
+        },
+        {
+          "letter": "I"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "S"
+        },
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "K"
+        },
+        null,
+        {
+          "letter": "K"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "L",
+          "number": 4
+        },
+        null,
+        null
+      ],
+      [
+        {
+          "letter": "C",
+          "number": 5
+        },
+        {
+          "letter": "H"
+        },
+        {
+          "letter": "I"
+        },
+        {
+          "letter": "C"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "G"
+        },
+        {
+          "letter": "O"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "I"
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "W"
+        },
+        null,
+        {
+          "letter": "B",
+          "number": 6
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "V"
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "M",
+          "number": 7
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "Y"
+        },
+        {
+          "letter": "W"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "T"
+        },
+        {
+          "letter": "H"
+        },
+        {
+          "letter": "E"
+        },
+        {
+          "letter": "R"
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "J"
+        },
+        null,
+        {
+          "letter": "K"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "R"
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "E"
+        },
+        null,
+        {
+          "letter": "S",
+          "number": 8
+        },
+        {
+          "letter": "Z"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "M"
+        },
+        {
+          "letter": "P"
+        },
+        {
+          "letter": "A"
+        },
+        {
+          "letter": "N"
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "I"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "O"
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "N"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "O"
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "S"
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "L"
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "K"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "I"
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "placements": [
+      {
+        "id": "60f5a34fe9bf",
+        "answer": "BRZOSKA",
+        "answerDisplay": "BRZOSKA",
+        "clue": "Ojciec Paczkomatów",
+        "type": "text",
+        "media": null,
+        "row": 0,
+        "col": 4,
+        "dir": "down",
+        "length": 7,
+        "number": 1
+      },
+      {
+        "id": "43ec55eb0aab",
+        "answer": "WILKOWYJE",
+        "answerDisplay": "WILKOWYJE",
+        "clue": "Wieś mieszkańców 'Rancza'",
+        "type": "text",
+        "media": null,
+        "row": 2,
+        "col": 6,
+        "dir": "down",
+        "length": 9,
+        "number": 2
+      },
+      {
+        "id": "df2ac3457b10",
+        "answer": "NAPOLI",
+        "answerDisplay": "NAPOLI",
+        "clue": "Włoski klub Maradony",
+        "type": "text",
+        "media": null,
+        "row": 3,
+        "col": 1,
+        "dir": "across",
+        "length": 6,
+        "number": 3
+      },
+      {
+        "id": "8c7b98d48836",
+        "answer": "LIVERPOOL",
+        "answerDisplay": "LIVERPOOL",
+        "clue": "Miasto Beatlesów i klubu z Anfield",
+        "type": "text",
+        "media": null,
+        "row": 5,
+        "col": 12,
+        "dir": "down",
+        "length": 9,
+        "number": 4
+      },
+      {
+        "id": "e75699b7efb0",
+        "answer": "CHICAGO",
+        "answerDisplay": "CHICAGO",
+        "clue": "Miasto Kanyego Westa i wielu Polaków",
+        "type": "text",
+        "media": null,
+        "row": 6,
+        "col": 0,
+        "dir": "across",
+        "length": 7,
+        "number": 5
+      },
+      {
+        "id": "5de9f5a2ac44",
+        "answer": "BEKSINSKI",
+        "answerDisplay": "BEKSIŃSKI",
+        "clue": "Słynny polski malarz, znany z mrocznych obrazów",
+        "type": "text",
+        "media": null,
+        "row": 7,
+        "col": 8,
+        "dir": "down",
+        "length": 9,
+        "number": 6
+      },
+      {
+        "id": "586d4b4d424d",
+        "answer": "MAYWEATHER",
+        "answerDisplay": "MAYWEATHER",
+        "clue": "Legendarny bokser z numeru Żabsona",
+        "type": "text",
+        "media": null,
+        "row": 8,
+        "col": 4,
+        "dir": "across",
+        "length": 10,
+        "number": 7
+      },
+      {
+        "id": "b5826508a4f0",
+        "answer": "SZAMPAN",
+        "answerDisplay": "SZAMPAN",
+        "clue": "Przełomowy hit Sanah z 2020 roku",
+        "type": "text",
+        "media": null,
+        "row": 10,
+        "col": 8,
+        "dir": "across",
+        "length": 7,
+        "number": 8
+      }
+    ],
+    "unplaced": []
   }
 }
